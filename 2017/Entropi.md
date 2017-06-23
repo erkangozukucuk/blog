@@ -34,9 +34,8 @@ Fonksiyonda `ISet` arayüzünü kullanmamın amacı koleksiyon içerisindeki tü
 Peki aynı elemanlar tekrarlı şekilde koleksiyon içerisinde bulunsalardı bu benim sonucumu etkiler miydi? İlk bakışta etkilememesi gerekiyor gibi gözükür çünkü  `“kırımızı = 001”` gibi eşleştirme yapmış olsaydım,kırmızı ile tekrar karşılaştığımda `001` yazar geçerdim. Öyleyse şöyle bir diziyidüşünelim:
 
 ```csharp
-              var a =new[] { "kırmızı" ,"mavi","sarı", "mor", "siyah", "gri" ,"beyaz","yeşil","yeşil", "yeşil", "yeşil", "yeşil",
+var a =new[] { "kırmızı" ,"mavi","sarı", "mor", "siyah", "gri" ,"beyaz","yeşil","yeşil", "yeşil", "yeşil", "yeşil",
 "yeşil", "yeşil" , "yeşil", "yeşil", "yeşil", "yeşil", "yeşil", "yeşil"};
-
 ```
 
 
@@ -63,7 +62,7 @@ Bu durumda eleman başına 3.5bit’lik bir harcama yapmış olurum fakat ilk du
 
 Peki bu 2 değerini bilmenin bir yolu var mıdır? Bunun için gereken formül _Shannon_'ın entropi formülü olacaktır:
 
-![latex1.png](latex1.png)
+$$-\sum_{i=1}^n{P(x_i)log_2P(x_i)}$$
 
 Formülde ki P ifadesi probability yani ilgili değerin olasılığını belirtiyor. Yani aslında yaptığımız ilk formüldeki hesabı her bir değerin gelme olasılığına göre ağırlıklandırmak.  Bunu hesaplamak için C# kullanacak olursak kodumuz aşağıdaki gibi olacaktır:
 
@@ -107,6 +106,8 @@ Formülde ki P ifadesi probability yani ilgili değerin olasılığını belirti
 Bu fonksiyonu örnek koleksiyonumuz için çalıştıracak olursak bize `~1.98bit` sonucunu verecektir. Pratik kullanımda bir _bit_ parçalanamayacağı için yukarı yuvarladığımızda  ulaşacağımız sonuç  `2bit` olacaktır. Bu da bir dizinin her bir elemanını kodlamak için gereken optimal bit miktarını verecektir. Örneğin, bir metin dosyasında a harfi çok geçerken ğ harfi çok daha az geçebilir. Bu durumda a için daha az bit kullanılması dosyanın sıkıştırılabilmesine neden olmaktadır. Benzer şekilde metin kelimelerine ayrılıp numaralandırılırsa çok daha yüksek sıkıştırma oranları elde edilebilir. Logaritma değeri olarak istenilen bir değer verilebilmektedir. Sık olarak 2 değeri verilmekle birlikte, doğal logaritma ile hesaplandığı da görülmektedir.
 
 Peki, bir koleksiyon ile başka bir koleksiyonu düzensizliklerine göre karşılaştırmak istersem. Örneğin, X ve Y müşterilerini harcama yaptıkları farklı mağazalara göre düzensizliklerini merak edebilirim. Mağazaları 1,2,3,4… olarak tam sayılar olarak gösterelim -ki reklam olmasın- ve harcama dağılımları aşağıda gösterildiği şekilde olsun:
+
+
 
 ```csharp
 var x =new[] { 1, 1, 4, 2, 5, 1, 1, 1, 1, 3, 5, 2, 7, 2, 5, 9, 9, 7, 4, 3, 4, 1, 3, 5, 7, 3 };
