@@ -62,9 +62,9 @@ Bu durumda eleman başına 3.5bit’lik bir harcama yapmış olurum fakat ilk du
 
 Peki bu 2 değerini bilmenin bir yolu var mıdır? Bunun için gereken formül _Shannon_'ın entropi formülü olacaktır:
 
-<pre>
+
 $$-\sum_{i=1}^n{P(x_i)log_2P(x_i)}$$
-</pre>
+
 
 Formülde ki P ifadesi probability yani ilgili değerin olasılığını belirtiyor. Yani aslında yaptığımız ilk formüldeki hesabı her bir değerin gelme olasılığına göre ağırlıklandırmak.  Bunu hesaplamak için C# kullanacak olursak kodumuz aşağıdaki gibi olacaktır:
 
