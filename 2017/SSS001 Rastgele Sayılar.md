@@ -1,6 +1,6 @@
 ---
 Title: SSS001 Rastgele Sayılar
-PublishDate: 29/06/2017
+PublishDate: 28/06/2017
 IsActive: True
 Tags: C#, Random
 ---
