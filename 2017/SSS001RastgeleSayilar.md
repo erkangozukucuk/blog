@@ -119,6 +119,6 @@ void Main()
 
 Buradaki fark _HashSet_'in kullandığı kovalama yönteminden kaynaklanıyor. Hangi koleksiyon tipinin hangi senaryolarda kullanılması gerektiği de başka bir yazının konusu olsun. 
 
-> **Not :**  _HashSet_ ve _ISet_ uygulanmış koleksiyon sınıflarında aynı eleman iki defa bulunamaz. Aynı eleman ikinci defa eklenmeye çalışıldığında _Add_ metodu geriye _false_ değeri döner.
+> **Not :**  _HashSet_ gibi _ISet_ uygulanmış koleksiyon sınıflarında aynı eleman iki defa bulunamaz. Aynı eleman ikinci defa eklenmeye çalışıldığında _Add_ metodu geriye _false_ değeri döner.
 
 
