@@ -23,7 +23,7 @@ var aylıkgelir = new[] { 1.5, 2, 2.5, 2, 9, 15, 18, 15, 10, 3, 3.5, 4, 2, 12, 1
 
 Bunu Excel yardımıyla grafiğe dökelim:
 
-![enter image description here](https://raw.githubusercontent.com/cihanyakar/blog/master/2017/media/Korelasyon/grafik1.PNG)
+![enter image description here](grafik1.PNG)
 
 Çok bariz bir çizgi olmasa da sağa doğru ilerlediğinizde tahmininiz noktaların daha yüksekte olacağından yana olacaktır. Bu yönü bulma işine ise _kovaryans_ adı veriliyor ve formülü şu şekilde:
 
@@ -92,7 +92,7 @@ static double Pearson(IList<double> dizi1, IList<double> dizi2)
 ```
 
  Formülü elimizdeki sayılara uyguladığımızda sonuç `~0.6` çıkacaktır. Bu da ilişkinin ortanın üzerinde bir güçte olduğunu gösterir. Bu konuda genellikle `0.66` nın üzeri güçlü olarak kabul edilmektedir.
- 
+
 
 ### Bitirirken
 
