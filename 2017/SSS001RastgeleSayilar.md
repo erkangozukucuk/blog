@@ -6,7 +6,7 @@ Tags: C#, Random
 ---
 
 
-Forumlarda sürekli sorulan sorular bölümümün ilk konusunu için bu konuyu seçtim. Rastgele sayı üretmek C# tarafında sürekli yanlış bilgiler içermektedir. Bu sebeple bu konu ile ilgili özet bilgilerden bahsedeceğim.
+Forumlarda sürekli sorulan sorular bölümümün ilk konusunu için bu konuyu seçtim. Genellikle  rastgele sayı üretmek sorularına verilen cevaplar yanlış veya eksik bilgiler içermektedir. Bu yazıda en sık karşılaşılan iki problemi ele alıyor olacağım.
 
 ####SORU : "Sürekli aynı sayı üretiliyor"
 Kısaca nedeni : Seed kavramı.
