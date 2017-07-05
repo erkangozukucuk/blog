@@ -1,4 +1,4 @@
----
+﻿---
 Title: Anlatacaklarımız Vardı
 PublishDate: 24/03/2017
 IsActive: True
@@ -14,4 +14,4 @@ Benim payıma düşen konulardan ilki `Github ve Roslyn ile Maceralar` oldu. Bu 
 
 
 
-![d1.jpg](d1.jpg)
+![d1.jpg](media/AnlatacaklarimizVardi/d1.jpg)

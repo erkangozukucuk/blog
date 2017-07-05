@@ -10,4 +10,4 @@ Erdemli Uygulamalı Teknoloji ve İşletmecilik Yüksekokulu (UTİYO) tarafında
 
 
 
-![mersin.jpg](mersin.jpg)
+![mersin.jpg](media/MersinUniversitesiCrossplatformdaMobilUygulamaGelistirmeCalistayi/mersin.jpg)
