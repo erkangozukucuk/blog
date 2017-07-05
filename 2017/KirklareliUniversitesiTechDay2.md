@@ -12,5 +12,5 @@ Etkinlikte benim konum "Visual Studio kullanarak Takım Çalışması" oldu. Kon
 
 
 
-![afis](afis.PNG)
+![afis](media/KirklareliUniversitesiTechDay2/afis.PNG)
 
