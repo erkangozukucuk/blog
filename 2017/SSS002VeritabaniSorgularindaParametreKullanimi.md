@@ -13,7 +13,7 @@ Yazılım geliştirme serüveninde veritabanları ile çalışılmaya başlayan 
 
 ```sql
 SELECT * FROM Musteri
-``` 
+```
 Bu sorguyu eğer bir programda kullanacaksak ve özel başka bir amacımız yoksa * dan kurtulmalıyız. Burada bir kaç sebebimiz var :
 
  * Sadece ihtiyacımız olan nitelikleri alarak veri boyutunu azaltmak
@@ -24,20 +24,20 @@ Sorgumuz şu hale getirelim :
 
 ```sql
 SELECT Ad, Soyad, CepTelefon FROM Musteri
-``` 
+```
 
 Buraya kadar iyi ama ben "kişisel" bir son dokunuş yapmak istiyorum ve sorgu şu hale geliyor :
 
 ```sql
 SELECT [M].[Ad], [M].[Soyad], [M].[CepTelefon] FROM [dbo].[Musteri] as [M];
-``` 
+```
 
 Burada yaptığım dokunuşların sebepleri şunlar :
 
 * `[]` kullanımı ile keywordler ile veritabanı nesnelerinin farkını rahat görmek.
-*  `dbo` ile scheme'ı özellikle belirtme ihtiyacı duyuyorum
-*  `as [M]` ile sorgunun bu sonucuna bir isim veriyorum ve bu sonuçtan dönen nitelikleri `[M].[Ad]`  gibi kullanıyorum. Daha sonra bu sorguya bir _JOIN, Subquery_ vb. eklediğimde karışıklıkların oluşmasını engellemiş oluyorum.
-*  `;` ise bir sorgunun bittiğini gösterdiği için uzun sorgularda oldukça işe yarıyor. (_WITH gibi keywordlerin kullanımında ise noktalı virgül zaten zorunlu olarak bulunmalıdır_)
+* `dbo` ile scheme'ı özellikle belirtme ihtiyacı duyuyorum
+* `as [M]` ile sorgunun bu sonucuna bir isim veriyorum ve bu sonuçtan dönen nitelikleri `[M].[Ad]`  gibi kullanıyorum. Daha sonra bu sorguya bir _JOIN, Subquery_ vb. eklediğimde karışıklıkların oluşmasını engellemiş oluyorum.
+* `;` ise bir sorgunun bittiğini gösterdiği için uzun sorgularda oldukça işe yarıyor. (_WITH gibi keywordlerin kullanımında ise noktalı virgül zaten zorunlu olarak bulunmalıdır_)
 
 > **Not:** İsteğe bağlı olarak, bu sorguda herhangi bir transaction derdiniz yoksa isolation seviyesini düşürecek hamleler ( `WITH (NOLOCK)` gibi)  yapabilirsiniz.
 
@@ -45,7 +45,7 @@ Asıl meseleye yavaştan gelelim, ben sadece adı "Cihan" olan müşterileri get
 
 ```sql
 SELECT [M].[Ad], [M].[Soyad], [M].[CepTelefon] FROM [dbo].[Musteri] as [M] WHERE [M].[Ad] = 'Cihan';
-``` 
+```
 
 Bu sorguyu tek sefer kullanmak için yazıyorsanız sıkıntı yok, fakat burada "Cihan" yerine farklı farklı değerler vererek sorgulamalar yapmayı amaçlıyorsanız bu yöntemi öneremeyeceğim. Çünkü hem yönetimi zor bir yöntem olacaktır hem de yine performans açısından sıkıntıları olacaktır. Sorguyu şu şekilde değiştiriyorum:
 
@@ -53,7 +53,7 @@ Bu sorguyu tek sefer kullanmak için yazıyorsanız sıkıntı yok, fakat burada
 DECLARE @ad nvarchar(50) = 'Cihan';
 
 SELECT [M].[Ad], [M].[Soyad], [M].[CepTelefon] FROM [dbo].[Musteri] as [M] WHERE [M].[Ad] = @ad;
-``` 
+```
 
 Sorgum bu hale geldiğinde aslında bir kaç iş birden yaptım: 
 
@@ -70,7 +70,7 @@ Tekrar hatırlatıyorum bu kullanımı gerçek senaryoda sürekli değişkenlik 
 DECLARE @ad nvarchar(50) = 'Cihan';
 
 SELECT [M].[Ad], [M].[Soyad], [M].[CepTelefon] FROM [dbo].[Musteri] as [M] WHERE [M].[Ad] = @ad AND [M].[SilindiMi] = 0;
-``` 
+```
 > *İPUCU*: Nadir olarak değişkenlik gösteren durumlar oluyorsa bu durumda parametre kullanımında [OPTIMIZE FOR](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query) ile sık kullanılan değere göre optimizasyon sağlayabilirsiniz.
 
 ### Program Tarafı
@@ -113,7 +113,7 @@ public async Task<IEnumerable<Musteri>> MusteriAra(string ad)
 }
 ```
 
-Burada hemen şu düşünün. Uygulamanıza bir metin kutusu koydunuz ve şu şekilde kod yazdınız :
+Burada hemen  uygulamanıza bir metin kutusu koyduğunuzu ve şu şekilde kod yazdığınızı düşünün :
 
 ``` csharp
 //...
@@ -121,12 +121,12 @@ Burada hemen şu düşünün. Uygulamanıza bir metin kutusu koydunuz ve şu şe
 //...
 ```
 Böyle bir özellikle kullanıcı veritabanınıza neler yapabilir? Cevap basit, SQL kullanıcısına ne yetki verdiyseniz onu yapabilir. Çoğu durumda veritabanını komple silebilir bile. **İşte + ile SQL cümlesi oluşturduğunuzda kullanıcıya aynı şekilde veritabanında tam yetki vermiş oluyorsunuz.** Nasıl mı?  Kullanıcının şu isimde müşteri aradığını düşünelim : ` '; DROP TABLE Musteri; --` bu durumda oluşacak SQL cümlesi:
-   
+
 ```sql
 DECLARE @ad nvarchar(50) = ''; DROP TABLE Musteri; --';
 
 SELECT [M].[Ad], [M].[Soyad], [M].[CepTelefon] FROM [dbo].[Musteri] as [M] WHERE [M].[Ad] = @ad;
-``` 
+```
 haline dönüşecektir, bu SQL cümlesi içinde parametre kullanmasanız da aynı şekilde tehlikelidir. Çoğu  bol yetki durumunda kullanıcı tabloyu silmiş olacaktır.
 
 Bu fark edildiği anda durumu çözmek için daha vahim bir yöntem uygulanmaya çalışılır. Bu yöntem, tehlike oluşturabilecek karakterlerin argümanlardan temizlenmesidir. Örneğin `'` karakteri temizlenir ve kullanıcının bu kötü niyetli işleri yapması engellemesi amaçlanır. Bu aslında bir çözüm değildir. Bu kötü yöntemde  
