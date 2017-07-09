@@ -42,7 +42,7 @@ body {
     margin-right: auto;
     min-height: 100%;
     padding: 0rem 0em 0rem 0em;
-    width: 100%;
+    max-width: 900px;
 }
 
 pre {
@@ -216,8 +216,6 @@ p.inverse-big {
 .content ol li {
     font-family: "Source Sans Pro";
     font-size: 90%;
-    margin-bottom: 0.7em;
-    margin-left: 1rem;
     padding-left: 1rem;
 }
 
@@ -364,61 +362,12 @@ footer {
     color: #a7a7af;
     font-size: 80%;
     margin-bottom: 50px;
-    margin-left: 17vw;
-    margin-right: 11vw;
+ 
+	width:100%;
     margin-top: 50px;
 }
-@media all and (max-width: 990px) {
-    .content {
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-    .listing {
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-    footer {
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) and (max-width: 320px) {
-
-    .content {
-        margin-left: 1vw;
-        margin-right: 1vw;
-        padding: 2vh 4vw 2vh 4vw;
-    }
-
-    .listing {
-        margin-left: 1vw;
-        margin-right: 1vw;
-        padding: 2vh 4vw 2vh 4vw;
-    }
-
-    footer {
-        margin-left: 1vw;
-        margin-right: 1vw;
-        padding: 2vh 4vw 2vh 4vw;
-    }
-}
-
-
-@media all and (max-width: 560px) {
-    .content {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .listing {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    footer {
-        margin-left: 0;
-        margin-right:0;
-    }
-}
-
+ 
+ 
 
 .backbutton {
     border: 1px solid #a7a7af;
