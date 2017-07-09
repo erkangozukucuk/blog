@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="/rss" rel="alternate" title="RSS feed" type="application/rss+xml">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Jockey+One|Merriweather:400,400i&amp;subset=latin-ext" rel="stylesheet">
+    <title>Cihan Yakar Blog</title>
+    <script src="https://use.fontawesome.com/16872af2b1.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/style" />
+
+</head>
+
+<body>
+<div class="header">
+    
+	<a href="https://www.linkedin.com/in/cihanyakar/" target="_blank">
+	    <img class="img-circle" src="https://www.gravatar.com/avatar/aadd8b9cc756d360cc91662c7a44a14e" alt="Cihan Yakar"/>
+	</a>
+
+    <div class="blogtitle">Cihan Yakar
+        <!-- <div class="blogdesc">.net developer</div></div> -->
+   
+</div>
+
+
+<div class="listing">
+    <!--<div>
+        Uzun bir aradan sonra tekrar blog yazmaya karar verdim. Eski yazilari kaldirip 0'dan yazacagim.
+        
+    </div>
+    <hr class="footerline" />-->
+    {CONTENT-LIST}
+    {CONTENT-LIST-TEMPLATE}
+    <div class="wrapper">
+        <div class="date">
+            {CONTENT-DATE}
+        </div>
+        <div class="title">
+            <a href="{CONTENT-LINK}">{CONTENT-TITLE}</a>
+        </div>
+        <div class="cleared"></div>
+    </div>
+    {CONTENT-LIST-TEMPLATE} {YEARSEPARATOR-TEMPLATE}
+    <span class="year">{CONTENT-YEAR}</span> <br/> {YEARSEPARATOR-TEMPLATE} {MONTHSEPARATOR-TEMPLATE}
+    <span class="month">{CONTENT-MONTH}</span> <br/> {MONTHSEPARATOR-TEMPLATE}
+
+</div>
+    
+<footer>
+    <hr class="footerline" />
+
+    <div style="float:left">
+        Cihan Yakar 2017
+    </div>
+
+    <div class="social">
+        <a href="http://cihanyakar.com/rss" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
+        <!-- <a href="http://www.twitter.com/cihanyakar" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
+        <a href="http://www.facebook.com/cihanyakar" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        <a href="http://www.instagram.com/cyakar" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/cihanyakar/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="http://www.github.com/cihanyakar" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+    </div>
+    <div class="cleared"></div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8821587-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
