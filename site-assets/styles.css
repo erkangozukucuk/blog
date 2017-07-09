@@ -305,6 +305,7 @@ table th {
     vertical-align: top;
     white-space: normal;
     float: right;
+	font-size:110%;
 }
 
 .social a { color: #a7a7af; margin-left:5px;}
@@ -361,7 +362,7 @@ h3 {
 
 footer {
     color: #a7a7af;
-    font-size: 80%;
+    font-size: 85%;
     margin-bottom: 50px;
     margin-left: 17vw;
     margin-right: 11vw;
