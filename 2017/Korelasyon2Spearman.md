@@ -62,6 +62,6 @@ Bu kodda neler yaptım? Öncelikle parametre olarak verilecek verileri sıralama
 
 ![Tablo](media/Korelasyon2Spearman/tablo.PNG)
 
-Tabloyu biraz incelerseniz, eğer bir sırayı birden fazla değer karşılıyor ise sırayı ` 1D / s1.Count(s => s == x) + 1` şeklinde yani `1 / (_aynı sıradaki eleman sayısı_) + 1` olarak buluyoruz. Aksi durumda Spearman  methodu düzgün sonuç vermeyecektir.
+Tabloyu biraz inceleyecek olursanız, eğer bir sırayı birden fazla değer karşılıyor ise sırayı ` 1D / s1.Count(s => s == x) + 1` şeklinde yani `1 / (_aynı sıradaki eleman sayısı_) + 1` olarak buluyoruz. Aksi durumda Spearman  methodu düzgün sonuç vermeyecektir.
 
 Daha sonra formüldeki yapının aynısını uygulayarak sonucu dönüyoruz. Formülü bu sayılar ile çalıştırdığımızda `~0.56` sayısını elde ediyoruz bu da Pearson'a oldukça yakın bir değer. Fakat kazanç tablosuna zengin bir iş adamı girmiş olsun. Son sıradaki 45 yaşındaki kişi 10bin yerine 100bin kazanıyor olsun. Bu durumda bir kişi yüzünden sonuçlar `Pearson : ~0.32 Spearman : ~0.61` şeklinde değişecektir. Veri içindeki sapan bir değer  Pearson yöntemini çok fazla etkilerken, Spearman yönteminde etkilenme oldukça az olmuştur. 
