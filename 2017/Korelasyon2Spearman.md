@@ -60,7 +60,7 @@ public static double Spearman(ICollection<double> seri1, ICollection<double> ser
 
 Bu kodda neler yaptım? Öncelikle parametre olarak verilecek verileri sıralama (ordinal) şeklinde gelmesini şart koşmamak adına parametreleri double koleksiyonları olarak ayarladım. Böyle olunca bunları sıralama düzenine sokmak gerekti (_zaten sıralama düzeninde gelirlerse de sorunsuz çalışacaktır_). Her iki dizinin sıralanmış kopyalarını çıkartarak başladım. Daha sonra formüldeki sıralar farkını hesaplayacak LINQ fonksiyonunu hazırladım. Burada temel olarak şunu yapıyoruz. Değerler bakımından birinci olan elemanın karşılığı eleman kendi dizisinde kaçıncı ise çıkartıyoruz. Örneğin, 56 yaş yaşlar içinde sırası `14`; 56 yaşın harcaması ise 18bin onun da kendi içinde sırası `15` bu ikisini bir birinden çıkarttığımızda `-1 ` değerini elde ediyoruz. Örneğin tüm satırlar için yaptığımız işi bir tabloya dökmek istersek :
 
-![Tablo](/2017/Korelasyon2Spearman/tablo.PNG)
+![Tablo](2017/Korelasyon2Spearman/tablo.PNG)
 
 Tabloyu biraz incelerseniz, eğer bir sırayı birden fazla değer karşılıyor ise sırayı ` 1D / s1.Count(s => s == x) + 1` şeklinde yani `1 / (_aynı sıradaki eleman sayısı_) + 1` olarak buluyoruz. Aksi durumda Spearman  methodu düzgün sonuç vermeyecektir.
 
