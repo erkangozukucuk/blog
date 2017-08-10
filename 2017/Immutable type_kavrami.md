@@ -14,11 +14,11 @@ Bu şekilde olan türleri aslında sıklıkla kullanıyoruz. Örneğin, `int, st
 string metin = "test";
 metin = "deneme";
 ```
-bu basit örnekte sağ tarafta `"test"` olarak bulunan kısımı  `new string(new []{'t','e','s','t'});` gibi düşünebilirsiniz. Birazcık terimlerle anlatmak gerekirse; aslında metin değişkeninin _heap_ de bulunan değerini değiştirmiyorsunuz. Bunun yerine _heap_ de yeni bir string oluşturup o yeni adres _stack_ de yerini alıyor. 
+bu basit örnekte sağ tarafta `"test"` olarak bulunan kısımı  `new string(new []{'t','e','s','t'});` gibi düşünebilirsiniz. Birazcık terimlerle anlatmak gerekirse; aslında metin değişkeninin _heap_ de bulunan değerini değiştirmiyorsunuz. Bunun yerine _heap_ de yeni bir string oluşturulup o yeni adres _stack_ de yerini alıyor. 
 
-Peki neden değişmez türler kullanmak gerekir? Eğer bir türün değerinin oluşturulduktan sonra bir daha değişmeyeceğini bilirseniz bunun için fazladan kontroller yapmanıza gerek kalmaz. Sınıfın kendi iç bütünlüğü hiç bir zaman bozulmaz. Bu türler kendiliğinden _thread safe_dir.
+Peki neden değişmez türleri kullanmak gerekir? Eğer bir türün değerinin oluşturulduktan sonra bir daha değişmeyeceğini bilirseniz, bunun için fazladan kontroller yapmanıza gerek kalmaz. Bu sayade de sınıfın iç bütünlüğü hiç bir zaman bozulmaz. Ek bir fayda olarak, bu türler kendiliğinden _thread safe_dir.
 
-Biraz örnek vermek istiyorum. 
+Biraz örnek vermek istiyorum: 
 
 ```csharp
 namespace Immutable
