@@ -1,4 +1,4 @@
-﻿---
+---
 Title: String Interning Kavramı Hakkında
 PublishDate: 22/08/2017
 IsActive: True
@@ -67,7 +67,7 @@ False // object.ReferenceEquals(x, y)
 False // object.ReferenceEquals(x, x)
 ```
 
-Birinci karşılaştırma _false_ sonucunu vermiştir. Çünkü referans türlerinde siz eşitliğin nasıl olacağını tanımlamadığınız sürece aslında eşitlik karşılaştırması iki nesnenin _heap_ bellek adreslerinin eşit olup olmadığına göre yapılır. Yani aslında _ReferenceEquals_ çağrılır.
+Birinci karşılaştırma _false_ sonucunu vermiştir. Çünkü referans türlerinde siz eşitliğin nasıl olacağını tanımlamadığınız sürece aslında eşitlik karşılaştırması iki nesnenin _heap_ bellek adreslerinin eşit olup olmadığına göre yapılır. Yani aslında arka planda _ReferenceEquals_ çağrılır.
 İkinci karşılaştırma _false_ dur. Çünkü bu iki nesne referans türü oldukları için _new_ ile bellekte farklı alanlardadır.
 Üçüncü karşılaştırmada a nın hedef bellek adresi a'ya eşit mi diye bakıldığında aynı sonucu vereceğinden _true_ sonucu gelmektedir.
 Dördüncü karşılaştırmada değer türlerine geçiyoruz. Bu iki nesne _stack_ üzerinde farklı yerlerde de olsa değer türleri özelliklerinin tek tek bir birine eşit olup olmamalarına göre eşitlik kontrolü yapılır. Minik performans iyileştirmelerinde özelliklerin tanım sırası bu sebeple önemlidir.
