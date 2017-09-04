@@ -132,8 +132,8 @@ Normalizasyon tüm özelliklerin aynı birimden ifade edilmesidir. Fakat pratik 
 
 Eleman sayısının, elemanların çarpma işlemine göre tersinin toplamına bölümüne denir. Harmonik ortalamada dizinin elemanları bir bütünün eleman sayısı kadar eşit bölünmüş parçalarındaki ortalamalardır. Amacımızda genel ortalamayı bulmaktır. 
 Genellikle zamansal ortalamalar alındığında kullanılır. En tipik örnekler sürat ile konularda verilir. 
-A,B şehirleri arasındaki mesafenin yarısı 50km/s ile kalan yarısı 100km/s ile katedilmiş ise ortalama hız ne kadardır? 
-Mesafeyi bilmiyoruz ama sürelerin eşit olduğunu biliyoruz. Bu durumda ortalamaları alırken mesafenin ne olduğu sonucu değiştirmeyecektir. 200 diyelim. Bu durumda ilk yarısını 100 / 50 = 2 saat , kalan yarısını 100 / 100 = 1 saat de gitmiştir. Toplam süre 3 saat saat sürmüştür. 200 / 3 = 66 km/s ortalama hız olarak bulunur. Ne alırsak değişmeyecek demiştik. Bu  durumda 200 yerine eleman sayısı olan 2 yi alalım. (1/50 + 1/100) saat sürecektir. 2 /(1/50 + 1/100) de bize 66 verecektir. Bu durumu formülleştirirsek:
+A,B şehirleri arasındaki mesafenin yarısı 50km/s ile kalan yarısı 100km/s ile katedilmiş ise ortalama sürat ne kadardır? 
+Mesafeyi bilmiyoruz ama sürelerin eşit olduğunu biliyoruz. Bu durumda ortalamaları alırken mesafenin ne olduğu sonucu değiştirmeyecektir. 200 diyelim. Bu durumda ilk yarısını 100 / 50 = 2 saat , kalan yarısını 100 / 100 = 1 saat de gitmiştir. Toplam süre 3 saat saat sürmüştür. 200 / 3 = 66 km/s ortalama sürat olarak bulunur. Ne alırsak değişmeyecek demiştik. Bu  durumda 200 yerine eleman sayısı olan 2 yi alalım. (1/50 + 1/100) saat sürecektir. 2 /(1/50 + 1/100) de bize 66 verecektir. Bu durumu formülleştirirsek:
 
 $$\overline{X}_{harmonik} =\frac{n}{\sum{\frac{1}{X_i}}}$$
 
@@ -160,7 +160,9 @@ Kareli ortalama (_root-mean-square_ , _rms_ veya _quadratic mean_) her elemanın
 
 $$\overline{X}_{kareli} =\sqrt{ \frac{\sum{{{X_i}^2}}}{n}}$$
 
-Kareli ortalama bir çeşit uzaklıkların ortalamasını almayı sağlar. Genellikle dalga ile ilgili hesaplarda kullanılsa da. İstatistik de her bir elemanın ortalamadan uzaklığının kareli ortalamasının alınması standart sapmayı bulmayı sağlar ve istatistik standart sapmayı oldukça fazla kullandığı için bilinmesinde ben fayda görüyorum. 
+Kareli ortalama bir çeşit uzaklıkların ortalamasını almayı sağlar. Genellikle dalga ile ilgili hesaplarda kullanılsa da. İstatistik de her bir elemanın ortalamadan uzaklığının kareli 
+
+ortalamasının alınması standart sapmayı bulmayı sağlar ve istatistik standart sapmayı oldukça fazla kullandığı için bilinmesinde ben fayda görüyorum. 
 
 
 
