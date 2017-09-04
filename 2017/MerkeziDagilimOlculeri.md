@@ -122,7 +122,7 @@ $$\%değişim = \frac{σ}{\overline{X}}$$
 C# dilinde yazacak olursak:
 
 ```csharp
-public static double Degisim(IList<double> dizi, VeriTur kitleTuru)
+public static double DegisimKatsayisi(IList<double> dizi, VeriTur kitleTuru)
 {
 	var ortalama = dizi.Average();
 	return (Math.Sqrt(dizi.Sum(x => Math.Pow(ortalama - x, 2))
