@@ -11,6 +11,8 @@ Ben bu konuşmada Xamarin özelinden çıkarak bir C# sunumu yaptım ve C# 7 ile
 
 Bu buluşmada Microsoft bize efsane ikramlar sundu. Ulaşım konusunda yaşadığım bir sıkıntıdan dolayı akşamın sonuna kadar kalamadım.
 
+Katılan herkese çok teşekkürler.
+
 
 ![1.jpg](media/Xamarin-Turkiye-29-Eylul-Meetup/1.jpg)
 ![2.jpg](media/Xamarin-Turkiye-29-Eylul-Meetup/2.jpg)
