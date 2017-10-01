@@ -118,7 +118,7 @@ Burada Tuple konusundaki kadar anlamlı bir kullanım olmadı gibi. Sonuçta eş
 
 ## Local Functions
 
-Yerel fonksiyonlar fonsiyon içinde fonksiyon tanımlama işlemleridir. .net framwork açısından düşündüğümüzde performansa genellikle (yanlış tanımlar yapılmadığı sürece) iyi yönde olmaktadır. Yine bir fonksiyonun içindeki döngü dışında kullanılmayacak bir fonksiyonu diğer fonksiyonların görebileceği bir yerlerde tanımlamakta genel OOP prensiplerine pek uymamaktadır. Fonsiyon içerisinde fonksiyon tanımlamasını zaten .net 2.0 dan bu yana yapabiliyoruz. [(Bu konuda hazırladığım örnekleri buraya tıklayarak inceyeyebilirsiniz)](https://github.com/cihanyakar/c-7/tree/master/7.0/2.%20Local%20Functions). C# 7 ile beraber bu tanımlamar daha doğal ve anlaşılır bir hale gelmiş durumda:
+Yerel fonksiyonlar fonsiyon içinde fonksiyon tanımlama işlemleridir. .net framwork açısından düşündüğümüzde performansa genellikle (yanlış tanımlar yapılmadığı sürece) iyi yönde olmaktadır. Yine bir fonksiyonun içindeki döngü dışında kullanılmayacak bir fonksiyonu diğer fonksiyonların görebileceği bir yerlerde tanımlamakta genel OOP prensiplerine pek uymamaktadır. Fonsiyon içerisinde fonksiyon tanımlamasını zaten .net 2.0 dan bu yana yapabiliyoruz. [(Bu konuda hazırladığım örnekleri buraya tıklayarak inceleyebilirsiniz)](https://github.com/cihanyakar/c-7/tree/master/7.0/2.%20Local%20Functions). C# 7 ile beraber bu tanımlamar daha doğal ve anlaşılır bir hale gelmiş durumda:
 
 ```csharp
 public enum Operation
