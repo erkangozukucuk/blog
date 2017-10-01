@@ -14,6 +14,8 @@ Bu buluşmada Microsoft bize efsane ikramlar sundu. Ulaşım konusunda yaşadı�
 Katılan herkese çok teşekkürler.
 
 
+
+
 ![1.jpg](media/Xamarin-Turkiye-29-Eylul-Meetup/1.jpg)
 
 ![2.jpg](media/Xamarin-Turkiye-29-Eylul-Meetup/2.jpg)
