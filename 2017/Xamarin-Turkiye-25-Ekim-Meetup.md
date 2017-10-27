@@ -14,8 +14,6 @@ Katılan herkese çok teşekkürler.
 
 
 
-
-
 ![1.jpg](media/Xamarin-Turkiye-25-Ekim-Meetup/1.jpg)
 
 ![2.jpg](media/Xamarin-Turkiye-25-Ekim-Meetup/2.jpg)
