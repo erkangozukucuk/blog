@@ -15,8 +15,11 @@ Katılan herkese çok teşekkürler.
 
 
 
+
 ![1.jpg](media/Xamarin-Turkiye-25-Ekim-Meetup/1.jpg)
 
 ![2.jpg](media/Xamarin-Turkiye-25-Ekim-Meetup/2.jpg)
 
-(Etkliğin Xamarin Türkiye Adresi)[http://www.xamarinturkiye.com/meetup-net-core-ve-xamarin-dependency-injection-xamarin-resilient-network-services/]
+![3.jpg](media/Xamarin-Turkiye-25-Ekim-Meetup/3.jpg)
+
+[Etkliğin Xamarin Türkiye Adresi](http://www.xamarinturkiye.com/meetup-net-core-ve-xamarin-dependency-injection-xamarin-resilient-network-services/)
