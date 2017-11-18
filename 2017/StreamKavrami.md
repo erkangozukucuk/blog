@@ -15,19 +15,32 @@ Framework içerisinde çoğu akış türü soyut [**Stream**](https://msdn.micro
 
 ### Özellikler
 **Position** : Yazının en başında akışları pikap,cd gibi düşünebilirsiniz demiştim. Bu özellik pikapın iğnesinin pikap üzerindeki konumuna karşılık gelmektedir.
+
 **CanRead, CanWrite, CanSeek, CanTimeout** : Akışın sunduğu yetenekleri belirtirler. Okunabilir mi, yazılabilir mi, atlana bilir mi (akışın konumu değiştirilebilir mi), zaman aşımı uygulanabilir mi?.
+
 **Length** : Akışın uzunluğunu belirtir. Her akış için geçerli değildir. Canlı bir yayında veya bir cihaz ile bağlantı kurulduğunda bir boyuttan söz edilemez.
+
 **ReadTimeout,WriteTimeout** : Milisaniye cinsinden zaman aşımı sürelerini belirtir.
+
+
 
 ### Metotlar
 Sadece önemli olanları açıklayacağım:
 **Read :** Belirtilen byte kadar bilgiyi parametre olarak verilen byte dizisine koyar. Geriye kaç byte okuyabildiyse onu döner. 105byte'lık bir akışı döngü ile 50şer bytelar ile okuduğumuzu varsayalım. İlk iki dönüşte 50 yanıtını alırken son turda 5 yanıtını alırız. Akışın konumu okunan byte kadar kayar.
+
 **ReadByte :** Tek bir byte okur ve sıradakine geçer. **Geri dönüş türü adında olduğu gibi byte değil int'dir.**
+
 **Write :** Belirtilen diziden belirtildiği kadar byte'ı akışa yazar ve konumu yazılan byte kadar ilerletir.
+
 **WriteByte :** Tek bir byte yazar ve akış bir byte kayar.
+
 **Seek :** Akışın konumu değiştirilir.
+
 **Flush :** Bazı akışlar tampon bellek kullanabilir. Bu durumda yazılanlar akıştan önce bir tamponda tutulur. Bu metot çağrıldığında tampon bellekteki tüm veri doğrudan akışa yazılır.
+
 **Close :** Akış kapatılır. (Tekrar açmayacaksınız `Dìspose` kullanın)
+
+
 
 ### MemoryStream
 Anlaşılması en kolay akışlardandır. Genellikle iki farklı akış arasında köprü görevi kurmak için kullanılır.
