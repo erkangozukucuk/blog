@@ -17,7 +17,7 @@ Framework içerisinde çoğu akış türü soyut [**Stream**](https://msdn.micro
 **Position** : Yazının en başında akışları pikap,cd gibi düşünebilirsiniz demiştim. Bu özellik pikapın iğnesinin pikap üzerindeki konumuna karşılık gelmektedir.
 **CanRead, CanWrite, CanSeek, CanTimeout** : Akışın sunduğu yetenekleri belirtirler. Okunabilir mi, yazılabilir mi, atlana bilir mi (akışın konumu değiştirilebilir mi), zaman aşımı uygulanabilir mi?.
 **Length** : Akışın uzunluğunu belirtir. Her akış için geçerli değildir. Canlı bir yayında veya bir cihaz ile bağlantı kurulduğunda bir boyuttan söz edilemez.
-**ReadTimeout,WriteTimeout** : Milisaniye cinsinden zaman aşımı süreleri.
+**ReadTimeout,WriteTimeout** : Milisaniye cinsinden zaman aşımı sürelerini belirtir.
 
 ### Metotlar
 Sadece önemli olanları açıklayacağım:
