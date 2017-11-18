@@ -26,6 +26,7 @@ Framework içerisinde çoğu akış türü soyut [**Stream**](https://msdn.micro
 
 ### Metotlar
 Sadece önemli olanları açıklayacağım:
+
 **Read :** Belirtilen byte kadar bilgiyi parametre olarak verilen byte dizisine koyar. Geriye kaç byte okuyabildiyse onu döner. 105byte'lık bir akışı döngü ile 50şer bytelar ile okuduğumuzu varsayalım. İlk iki dönüşte 50 yanıtını alırken son turda 5 yanıtını alırız. Akışın konumu okunan byte kadar kayar.
 
 **ReadByte :** Tek bir byte okur ve sıradakine geçer. **Geri dönüş türü adında olduğu gibi byte değil int'dir.**
