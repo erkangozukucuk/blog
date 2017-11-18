@@ -258,7 +258,7 @@ Artık gönderme ve alma işlemlerinde yardımcı sınıflar kullandık.  `while
 
 ### Console / Process
 
- Bizim en bildiğimiz akış ise şüphesiz `Console` dur diye tahmin ediyorum :). Aslında Console bir static sınıftır ve farklı streamler için sarmalayıcı görevi görür.  Console içinde üç temel akış vardır, Input, Output ve Error. 
+ Bizim en bildiğimiz akış ise şüphesiz `Console` dur diye tahmin ediyorum :). Aslında Console bir static sınıftır ve farklı streamler için sarmalayıcı görevi görür.  Console içinde üç temel akış vardır, Input, Output ve Error. Örneğin output akışını ele alalım:
 
 ```csharp
 Console.WriteLine("Merhaba");
@@ -270,7 +270,7 @@ Metodu aslında
 Console.Out.WriteLine("Merhaba");
 ```
 
-olarak da yazılabilir.  Aslında In ve Out da bir çeşit StreamReader/Writer ikilisidir. Doğrudan stream'e erişim kodu şöyle de yazabilirdik:
+olarak da yazılabilir.  Aslında In ve Out özellikleri bir çeşit StreamReader/Writer ikilisidir. Bu reader ve writer'ın eriştiği akışlara bizde erişebiliriz. Bunun için kodu şöyle de yazabiliriz:
 
 ```csharp
  var cikisAkisi = Console.OpenStandardOutput();
@@ -280,7 +280,7 @@ olarak da yazılabilir.  Aslında In ve Out da bir çeşit StreamReader/Writer i
  }
 ```
 
-Bu üç akış çağırdığımız akış aslında her bir Process de bulunabilir. Kendi çağırdığımız bir process'e buradan komut gönderebilir ve çıktısını okuyabiliriz. Örneğin ping atalım:
+Bir Windows/DOS programı dış dünya ile iletişim için bu akışları kullanabilir. Kendi çağırdığımız bir process'e buradan komut gönderebilir ve çıktısını okuyabiliriz. Örneğin ping işlemini çalıştıralım ve çıktısını kendi programımız üzerinden yapalım:
 
 ```csharp
 var islem = new Process
@@ -306,6 +306,6 @@ Console.WriteLine(outputstring);
 Console.ReadLine();
 ```
 
-Benzer şekilde input stream ile eğer program giriş kabul ediyor olsaydı gönderebilirdim. FFMPEG gibi bazı programlar çıkışları StandardOutput yerine StandardError üzerinden de yapabilirler.
+Benzer şekilde input stream üzerinden eğer program giriş kabul ediyor olsaydı gönderebilirdik. FFMPEG gibi bazı programlar çıkışları StandardOutput yerine StandardError üzerinden de yapabilirler.
 
 Başka bir yazıda görüşmek üzere.
