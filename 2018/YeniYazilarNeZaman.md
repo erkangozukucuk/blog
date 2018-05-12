@@ -10,5 +10,5 @@ Tags: Gündelik
 
  Lütfen görüş ve önerilerinizi aşağıdaki kısayolu verilmiş formdan iletiniz.
 
-[https://goo.gl/forms/FnYwAsCiUX81IlC13]
+[https://goo.gl/forms/FnYwAsCiUX81IlC13](https://goo.gl/forms/FnYwAsCiUX81IlC13)
 
