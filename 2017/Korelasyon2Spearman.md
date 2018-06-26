@@ -5,9 +5,9 @@ IsActive: True
 Tags: C#, Veri Madenciliği
 ---
 
-Önceki konularda [pearson](http://cihanyakar.com/korelasyon1pearson) yöntemini anlatmıştım. Pearson yöntemi ölçümlerin hatasız yapıldığı senaryolarda oldukça iyi sonuçlar verirken, yoruma bağlı veya ölçüm hatalarının olabildiği durumlarda başarımı düşmektedir. Spearman yöntemi ise değerler -ki bu değerlerde her zaman sağlanabiliyor- ile değil sıralamalar ile ilgilenerek ilişkiyi bulmaya çalışır. 
+Önceki konularda [pearson](http://cihanyakar.com/korelasyon1pearson) yöntemini anlatmıştım. Pearson yöntemi ölçümlerin hatasız yapıldığı senaryolarda oldukça iyi sonuçlar verirken, yoruma bağlı veya ölçüm hatalarının olabildiği durumlarda başarımı düşmektedir. Spearman yöntemi ise değerlerile değil sıralamalar ile ilgilenerek ilişkiyi bulmaya çalışır. 
 
-Sadece sıralama olarak düşünecek olursak bir mağazanın iki farklı alışveriş merkezinde aylara göre diğer mağazalara göre olan sıralamasının karşılaştırılması düşünülebilir. Veya iki şehrin sıcaklıklarının günlere göre dağılması düşünülebilir. Spearman yöntemi sıralamaya göre çalıştığı için küçük sapmalara karşı daha fazla tolerasyon göstermektedir. Sıcaklık örneğinde olduğu gibi bölgesel küçük değişikliklerden dolayı ölçümler bir kaç derece oynayabilir. Fakat bu oynamalar genel sıralamayı büyük ölçüde değiştirmeyecektir. Yine farklı şehirlerde ölçümlerin birebir aynı termometre ile yapılmadığını düşünecek olursak duyarlılık farklılıkları olacaktır. 
+Sıralama işlemine örnek verecek olursak; bir markanın iki farklı alışveriş merkezinde aylara göre diğer markalara göre olan sıralamasının karşılaştırılması düşünülebilir. Veya iki şehrin sıcaklıklarının günlere göre dağılması düşünülebilir (pazartesi, salıdan daha sıcak gibi). Spearman yöntemi sıralamaya göre çalıştığı için küçük sapmalara karşı daha fazla tolerasyon göstermektedir. Sıcaklık örneğinde olduğu gibi bölgesel küçük değişikliklerden dolayı ölçümler bir kaç derece oynayabilir. Fakat bu oynamalar genel sıralamayı büyük ölçüde değiştirmeyecektir. Yine farklı şehirlerde ölçümlerin birebir aynı termometre ile yapılmadığını düşünecek olursak ölçümlerde duyarlılık farklılıkları olacaktır. 
 
 Bir önceki örneğimizde şöyle bir verimiz vardı:
 
@@ -17,7 +17,7 @@ var aylıkgelir = new[] { 1.5, 2, 2.5, 2, 9, 15, 18, 15, 10, 3, 3.5, 4, 2, 12, 1
 ```
 Bu sayılar için daha önce pearson yöntemi ile hesaplama yapmıştık ve 0.6 değerini bulmuştuk. Karşılaştırma yapabilmek adına aynı sayılarla devam edeceğim.
 
-Öncelikle tabiki formüle ihtiyacımız olacak :
+Öncelikle doğal olarak formüle ihtiyacımız olacak :
 
 $$r_s =1- \frac{6(\sum{d^2})}{n(n^{2}-1)}$$
 
@@ -58,7 +58,7 @@ public static double Spearman(ICollection<double> seri1, ICollection<double> ser
 }
 ```
 
-Bu kodda neler yaptım? Öncelikle parametre olarak verilecek verileri sıralama (ordinal) şeklinde gelmesini şart koşmamak adına parametreleri double koleksiyonları olarak ayarladım. Böyle olunca bunları sıralama düzenine sokmak gerekti (_zaten sıralama düzeninde gelirlerse de sorunsuz çalışacaktır_). Her iki dizinin sıralanmış kopyalarını çıkartarak başladım. Daha sonra formüldeki sıralar farkını hesaplayacak LINQ fonksiyonunu hazırladım. Burada temel olarak şunu yapıyoruz. Değerler bakımından birinci olan elemanın karşılığı eleman kendi dizisinde kaçıncı ise çıkartıyoruz. Örneğin, 56 yaş yaşlar içinde sırası `14`; 56 yaşın harcaması ise 18bin onun da kendi içinde sırası `15` bu ikisini bir birinden çıkarttığımızda `-1 ` değerini elde ediyoruz. Örneğin tüm satırlar için yaptığımız işi bir tabloya dökmek istersek :
+Bu kodda neler yaptım? Öncelikle parametre olarak verilecek verileri sıralama (ordinal) şeklinde gelmesini şart koşmamak adına parametreleri double koleksiyonları olarak ayarladım. Böyle olunca bunları sıralı bir düzene sokmak gerekti (_zaten sıralama düzeninde gelirlerse de sorunsuz çalışacaktır_). Her iki dizinin sıralanmış kopyalarını çıkartarak başladım. Daha sonra formüldeki sıralar farkını hesaplayacak LINQ fonksiyonunu hazırladım. Burada temel olarak şunu yapıyoruz. Değerler bakımından birinci olan elemanın karşılığı eleman kendi dizisinde kaçıncı ise çıkartıyoruz. Örneğin, yaş ve toplam harcama için ilişki aradığımız bir senaryoda;  56 yaş yaşlar içinde sırası `14`; 56 yaşın harcaması ise 18bin onun da kendi içinde sırası `15` bu ikisini bir birinden çıkarttığımızda `-1 ` değerini elde ediyoruz. Örneğin tüm satırlar için yaptığımız işi bir tabloya dökmek istersek :
 
 ![Tablo](media/Korelasyon2Spearman/tablo.PNG)
 
