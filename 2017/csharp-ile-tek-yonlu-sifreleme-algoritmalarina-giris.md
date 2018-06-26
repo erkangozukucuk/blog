@@ -5,7 +5,7 @@ IsActive: True
 Tags: C#
 ---
 
-Veriyi şifreleme ile ilk yazımda konuya tek yönlü şifreleme mantığı ile başlamak istedim. Tek yönlü şifreleme adından da anlaşıldığı üzere şifreleme yapıldıktan sonra orijinal bilgiye ulaşılması imkansız olan şifreleme yöntemlerinin genel adıdır.
+Veriyi şifreleme ile ilk yazımda konuya tek yönlü şifreleme mantığı ile başlamak istedim. Tek yönlü şifreleme adından da anlaşıldığı üzere şifreleme yapıldıktan sonra orijinal bilgiye ulaşılması imkansız(_ters işleminde şifreli metnin açtığınızda sonsuz karşılığı olduğu için_) olan şifreleme yöntemlerinin genel adıdır.
 
 Tek yönlü şifrelemelerin oldukça yaygın kullanımı vardır. Orijinal bilgiye tekrar ulaşılamadığı için gizli bilgi iletiminde kullanılamayacakları açıktır. Peki nerelerde kullanıyoruz? Genel olarak "doğrulama" işlemlerinde kullanıyoruz diyebiliriz. 
 
