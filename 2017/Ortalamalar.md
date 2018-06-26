@@ -9,7 +9,14 @@ Bir yığın veriye bakıp karar vermek için gereken en temel bilgilerden biris
 
 ### Ortanca
 
-Ortanca (Medyan,_Median_) bir dizinin tam ortasında bulunan elemana denilmektedir. Dizi çift sayıda eleman barındırıyorsa ortanca olarak duruma göre seçim yapmak gerekir; ortadaki iki eleman birden, küçük olan, büyük olan veya bu iki elemanın aritmetik ortalaması ile bulunur. Ortanca'ya tam olarak ortalama diyemesekte özellikle sıralı dizilerde hesaplaması kolay olduğundan demetleme ve sınıflama algoritmalarında uzaklık hesabında kullanılmaktadır.
+Ortanca (Medyan,_Median_) bir dizinin tam ortasında bulunan elemana denilmektedir. Dizi çift sayıda eleman barındırıyorsa ortancanın seçimi analiz yapan kişinin tercihine kalmaktadır. Analizi yapan kişi dizide çift sayıda eleman olması durumunda şu yöntemleri tercih edebilir:   
+
+* Ortadaki iki eleman birden kabul edilmesi
+* Küçük olanın tercih edilmesi
+* Büyük olanın tercih edilmesi 
+* Ortadaki iki elemanın aritmetik ortalamasının kabul edilmesi
+
+Ortanca aslında yazının konusunda olduğu gibi bir ortalama değildir. Fakat fikir vermesi açısından ve özellikle sıralı dizilerde hesaplaması kolay olduğundan demetleme ve sınıflama algoritmalarında uzaklık hesabında kullanılmaktadır.
 
 Ortanca için C# da hazır bir metot bulunmamaktadır. En temel medyan bulma yönteminde dizi önce sıralanır ve eleman sayısına göre ortadaki indisteki eleman(lar) alınır. Örnekleyelim:
 
@@ -22,20 +29,20 @@ public static double Ortanca(IEnumerable<double> sayilar)
 }
 ```
 
-> Bu algoritma sıralama algoritmasına bağımlı olarak O(n * log n) karmaşıklığında olacaktır. Biraz araştırırsanız O(n) seviyesinde medyan bulan algoritmalar bulabilirsiniz. 
+> Bu algoritma sıralama algoritmasına bağımlı olarak O(n * log n) karmaşıklığında olacaktır. Biraz araştırırsanız O(n) seviyesinde medyan bulan algoritmalar bulabilirsiniz. Bu yazında hesaplaması ve anlaması kolay olduğu için ben bu yöntemi tercih ettim.
 
 
 
 ### Aritmetik Ortalama
 
-En çok bilinen ve kavraması en kolayıdır. Tüm sayıları toplayıp eleman sayısına bölmemiz sonucunda bulunur. 
+En çok bilinen ve anlaması en kolay ortalama türüdür. Tüm sayıları toplayıp eleman sayısına bölmemiz sonucunda bulunur. 
 
 $$\overline{X} = \frac{\sum{X_i}}{n}$$
 
 
 
-Duruma göre elemanlara ağırlık verilerek ağırlıklı aritmetik ortalama bulunabilir. Ağırlıklı ortalamada ilgili eleman ağırlığı kadar fazla geçiyormuş gibi hesaplanır. 
-C# da Linq kütüphanesi ile `Average` methodu aritmetik ortalamayı bulmak için kullanılır. Ağırlıklı ortalamada ise ağırlıklı çarpımlarımın toplamını ağırlıklar toplamına bölmek yeterlidir.
+Duruma göre elemanlara ağırlık verilerek ağırlıklı aritmetik ortalama bulunabilir. Ağırlıklı ortalamada ilgili eleman ağırlığı kadar fazla geçiyormuş gibi hesaplanır. Bu yöntemi kredili derslerin ortalamasının alınmasından hatırlayacaksınızdır.
+C# da Linq kütüphanesi ile `Average` methodu aritmetik ortalamayı bulmak için kullanılır. Ağırlıklı ortalamada ise ağırlıklı çarpımların toplamını ağırlıklar toplamına bölmek yeterlidir.
 ```csharp
 internal static class Program
 {
@@ -86,11 +93,11 @@ Bu örnek de O(2n) karmaşıklığında sonuç elde edilmiştir. Hesaplama şu �
 
 ### Geometrik Ortalama
 
-Geometrik ortalama, aritmetik kadar yaygın kullanılmasa da bir çok özel durumda kullanılmaktadır.
+Geometrik ortalama, aritmetik kadar yaygın kullanılmasa da bir çok özel durumda kullanılmaktadır. Bu durumlar:
 
 * Serinin elemanları oransal bir değişiklik gösterdiğinde kullanılmaktadır.
 * Sapan elemanların etkisini azaltma amacıyla kullanılmaktadır.
-* n boyutlu şeklin büyüklüğünün (2 boyut için alan, 3 boyut için hacim gibi) aynı kalarak her bir boyutunun eşit uzunluğa sahip olduğu durumu bulmak için kullanılmaktadır.
+* n boyutlu şeklin büyüklüğünün (2 boyut için alan, 3 boyut için hacim gibi) aynı kalarak her bir boyutunun eşit uzunluğa sahip olduğu durumu bulmak için kullanılmaktadır. Bu durum daha açıklayıcı şekilde yazının devamında bulunmaktadır.
 * Özellikleri farklı ölçüm birimi ile hesaplanmış bilgileri normalizasyon yapmadan basitçe karşılaştırmakta kullanılmaktadır.
 
 Oransal değişiklik konusunu ile başlayalım. Basit bir şekilde elimizdeki dizi `2, 4, 8` şeklinde sürekli ikiye katlanarak artıyor olsun. Bu dizinin ortalamasına ne demeliyiz? Eğer aritmetik ortalama alırsak sonuç `4.66` çıkacaktır. Fakat oransal artışa göre baktığımızda ortalama `4` olmalıdır. Beş oranında artan  `1, 5, 25` durumuna da bakalım. Oransal artışın orta noktası `5` dir. Ama sayıların ortalamasına baktığımızda sonuç `10.33` çıkacaktır. Oran arttırdıkça aritmetik ortalama ve geometrik ortalama arasındaki farkın arttığına dikkat ediniz. 
@@ -118,7 +125,7 @@ public static double GeometrikOrtalama2(IList<double> dizi)
 	return Math.Pow(2, dizi.Sum(x => Math.Log(x,2)) / dizi.Count); //2 yerine herhangi bir sayı yazılabilir
 }
 ```
-> Linq de yer alan `Aggregate` metodu iki argüman verir.Başlangıçta ilk iki eleman olmak üzere birisi mevcut elemanı diğeri bir önceki hesaplamadan dönen değeri verir. Yani  `2,4,6` dizisi için `x*y` durumunda sırasıyla {2,4}, {8,16} şeklinde 2 tur dönecektir. Ve sonuç  8 * 16 = 128 olarak bulunacaktır.
+> Linq de yer alan `Aggregate` metodu iki argüman verir.Başlangıçta ilk iki eleman olmak üzere birisi mevcut elemanı diğeri bir önceki hesaplamadan dönen değeri verir. Yani  `2,4,6` dizisi için `x*y` durumunda sırasıyla {2,4}, {8,16} şeklinde 2 tur dönecektir. Ve sonuç  8 * 16 = 128 olarak bulunacaktır. Bu metod diğer programlama dillerinde _reduce_ olarak geçmektedir.
 
 Sapan (outlier) veri olduğunda geometrik ortalama ile bu verilerin etkisi azaltılabilir. Fakat bu amaçla genellikle birazdan değineceğim harmonik ortalama kullanılmaktadır. Yine de harmonik ortalamanın hesaplanamadığı durumlarda bu amaçla kullanılabilir.
 
@@ -160,7 +167,7 @@ Kareli ortalama (_root-mean-square_ , _rms_ veya _quadratic mean_) her elemanın
 
 $$\overline{X}_{kareli} =\sqrt{ \frac{\sum{{{X_i}^2}}}{n}}$$
 
-Kareli ortalama bir çeşit uzaklıkların ortalamasını almayı sağlar. Genellikle dalga ile ilgili hesaplarda kullanılsa da. İstatistik de her bir elemanın ortalamadan uzaklığının kareli 
+Kareli ortalama bir çeşit uzaklıkların ortalamasını almayı sağlar. İstatistik de her bir elemanın ortalamadan uzaklığının kareli 
 
 ortalamasının alınması standart sapmayı bulmayı sağlar ve istatistik standart sapmayı oldukça fazla kullandığı için bilinmesinde ben fayda görüyorum. 
 
