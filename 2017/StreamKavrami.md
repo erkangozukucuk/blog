@@ -7,11 +7,11 @@ Tags: C#
 
 
 
-Stream (Akış) verinin bir bütün değil de parça parça alınması,işlenmesi olarak düşünülebilir. Pikap,cd, dvd,radyo... gibi düşünebilirsiniz okuyucu kafa, anten yalnızca bulunduğu konumdaki veriden küçük parçalar okur veya yazar.  Akışlar yazdığımız hemen her programda bulunurlar. Biz doğrudan kullanmasak da ihtiyaç duyduğumuz kütüphaneler bunları sürekli kullanmaktadırlar. Internet üzerinden bir dosya indirirken bu dosya bize kalıp halinde değil de işleyip birleştirmemiz gereken parçalar haline gelecektir. Yine sabit diskten bir dosya okurken bu dosya aslında bir akış yardımıyla parça parça gelmektedir. 
+Stream (Akış) verinin bir bütün değil de parça parça alınması,işlenmesi olarak düşünülebilir. Pikap,cd, dvd,radyo... gibi düşünebilirsiniz. Okuyucu kafa yalnızca bulunduğu konumdaki veriden küçük parçalar okur veya yazar.  Akışlar geliştirdiğimiz hemen her programda bulunurlar. Biz doğrudan kullanmasak da ihtiyaç duyduğumuz kütüphaneler bunları sürekli kullanmaktadırlar. Internet üzerinden bir dosya indirirken bu dosya bize kalıp halinde değil de işleyip birleştirmemiz gereken parçalar haline gelecektir. Yine sabit diskten bir dosya okurken bu dosya aslında bir akış biçiminde parça parça gelmektedir. 
 
-Akışlar farklı alt türlere ayrılabilir. Canlı bir yayın akışında akış üzerinde konum değiştirmek mümkün değilken, sabit diskten okunan bir video dosyasında konum değiştirmek basit bir iştir. Yine akışlar yönlerine göre de üçe ayrılabilirler. Bir akış sadece yazma yönündeyken diğeri okuma yönünde olabilir.  Ya da her ikisi.
+Akışlar farklı alt türlere ayrılabilir. Canlı bir yayın akışında akış üzerinde konum değiştirmek mümkün değilken, sabit diskten okunan bir video dosyasında konum değiştirmek basit bir iştir. Yine akışlar yönlerine göre de üçe ayrılabilirler. Bir akış sadece yazma yönündeyken diğeri okuma yönünde olabilir.  Ya da her ikisi birden olabilir.
 
-Framework içerisinde çoğu akış türü soyut [**Stream**](https://msdn.microsoft.com/en-us/library/system.io.stream%28v=vs.110%29.aspx) sınıfından türemişlerdir. Bazıları ise sadece arka taraftaki bir akış için sarmalayıcı yapıdadır.  Öncelikle önemli metot ve özelliklere bakalım:
+Framework içerisinde çoğu akış türü soyut [**Stream**](https://msdn.microsoft.com/en-us/library/system.io.stream%28v=vs.110%29.aspx) sınıfından türemişlerdir. Bazıları ise sadece arka taraftaki bir akış için sarmalayıcı yapıdadır.  Öncelikle bu sınıfa ait önemli metot ve özelliklere bakalım:
 
 ### Özellikler
 **Position** : Yazının en başında akışları pikap,cd gibi düşünebilirsiniz demiştim. Bu özellik pikapın iğnesinin pikap üzerindeki konumuna karşılık gelmektedir.
@@ -27,7 +27,7 @@ Framework içerisinde çoğu akış türü soyut [**Stream**](https://msdn.micro
 ### Metotlar
 Sadece önemli olanları açıklayacağım:
 
-**Read :** Belirtilen byte kadar bilgiyi parametre olarak verilen byte dizisine koyar. Geriye kaç byte okuyabildiyse onu döner. 105byte'lık bir akışı döngü ile 50şer bytelar ile okuduğumuzu varsayalım. İlk iki dönüşte 50 yanıtını alırken son turda 5 yanıtını alırız. Akışın konumu okunan byte kadar kayar.
+**Read :** Belirtilen byte kadar bilgiyi parametre olarak verilen byte dizisine koyar. Geriye kaç byte okuyabildiyse onu döner. 105byte'lık bir akışı döngü ile 50şer byte ile okuduğumuzu varsayalım. İlk iki dönüşte 50 yanıtını alırken son turda 5 yanıtını alırız. 
 
 **ReadByte :** Tek bir byte okur ve sıradakine geçer. **Geri dönüş türü adında olduğu gibi byte değil int'dir.**
 
