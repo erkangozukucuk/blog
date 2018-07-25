@@ -1,5 +1,5 @@
 ---
-Title: Özyineleme Kavramı
+Title: Özyineleme (Recursion) Kavramı
 PublishDate: 25/07/2018
 IsActive: True
 Tags: C#
