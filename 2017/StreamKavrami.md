@@ -252,7 +252,7 @@ Artık gönderme ve alma işlemlerinde yardımcı sınıflar kullandık.  `while
 
 ### StreamReader, StreamWriter
 
- Kendileri stream olmasalar da özellikle akıştaki veri eğer metin ise kullanmamız işimizi kolaylaştırmaktadırlar.  Örneğin UTF-8 de ilk okuduğunuz byte değeri 126 nın üzerindeyse karakteri oluşturmak için ikinci byte bakmak zorunda kalırsınız bu byte da toplam 2046 nın üzerine çıkınca üçüncü byte işin içine girer 65534 un üzerine çıkarsanız dördüncü byte'ı da işin içine sokmak gerekir. Bu sebeple tampon belleğim bir karakteri ortadan kesebilir. Bu da istenmeyen sonuçların gösterilmesine veya gönderilmesine neden olabilir. Bunları bizim için kolay ve hızlı halleden StreamReader ve StreamWriter byte okuması yerine karakter karakter okuma yapar.  Örnek kod bir önceki başlıkta mevcut inceleyebilirsiniz.
+ Kendileri stream olmasalar da; akan veri metin biçiminde ise kullanmamız işimizi kolaylaştırmaktadırlar.  Örneğin UTF-8 de ilk okuduğunuz byte değeri 126 nın üzerindeyse karakteri oluşturmak için ikinci byte bakmak zorunda kalırsınız bu byte da toplam 2046 nın üzerine çıkınca üçüncü byte işin içine girer 65534 un üzerine çıkarsanız dördüncü byte'ı da işin içine sokmak gerekir. Bu sebeple tampon belleğim bir karakteri ortadan kesebilir. Bu da istenmeyen sonuçların gösterilmesine veya gönderilmesine neden olabilir. Bunları bizim için kolay ve hızlı halleden StreamReader ve StreamWriter byte okuması yerine karakter karakter okuma yapar.  Örnek kod bir önceki başlıkta mevcut inceleyebilirsiniz.
 
 
 
