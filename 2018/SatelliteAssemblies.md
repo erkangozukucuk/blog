@@ -1,5 +1,5 @@
 ---
-Title: Satellite Assemblies (Uydu Bileşenler) Kavramı
+Title: Satellite Assemblies (Uydu Derlemeler) Kavramı
 PublishDate: 18/09/2018
 IsActive: True
 Tags: C#
