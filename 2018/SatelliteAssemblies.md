@@ -76,6 +76,6 @@ using (Stream stream = derleme.GetManifestResourceStream(kaynakAdi))
 }
 ```
 
-Burada önce üzerinde çalıştığımız derlemeyi (assembly) buluyoruz (System.Reflection). Daha sonra eğer mevcut kültürde bir uydu derleme varsa onu buluyoruz. Yoksa bir Exception fırlatılacak. Kodda bunu dikkate almıyoruz, hata varsa bu durumda varsayılan derlemeyi kabul ediyoruz. Ardından kaynağın içinden resim dosyasını okuyoruz. Resim dosyasının adında yer alan "SA" benim projeye dolayısyla namespace'e verdiğim isim.
+Bu kod bloğunda, önce üzerinde çalıştığımız derlemeyi (assembly) buluyoruz (_gereken namespace : System.Reflection_). Daha sonra eğer mevcut kültürde bir uydu derleme varsa onu buluyoruz. Yoksa bu satır bir Exception fırlatılacaktır. Kod içinde bunu dikkate almamak için bir try bloğu kullanıyoruz, ve hata durumunda varsayılan derlemeyi kabul ediyoruz. Ardından kaynağın içinden resim dosyasını okuyoruz. Resim dosyasının adında yer alan "SA" ise benim projeye ve dolayısyla namespace'e verdiğim isim.
 
 Sağlıcakla
