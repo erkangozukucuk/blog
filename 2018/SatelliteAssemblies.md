@@ -6,7 +6,7 @@ Tags: C#
 ---
 
 
-Muhtemelen bildiğiniz ama belki de adını ilk defa duyduğunuz bir kavramdan bahsedeceğim. Aşağıdaki tanıdık ekran görüntüsünü inceleyin.
+Muhtemelen çok iyi bildiğiniz ama belki de adını ilk defa duyduğunuz bir kavramdan bahsedeceğim. Aşağıdaki tanıdık ekran görüntüsünü inceleyin.
 
 
 ![sa1.PNG](media/SatelliteAssemblies/sa1.PNG)
