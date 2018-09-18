@@ -9,7 +9,7 @@ Tags: C#
 Muhtemelen bildiğiniz ama belki de adını ilk defa duyduğunuz bir kavramdan bahsedeceğim. Aşağıdaki ekran görüntüsünü inceleyin.
 
 
-![sa1.png](media/SatelliteAssemblies/sa1.png)
+![sa1.PNG](media/SatelliteAssemblies/sa1.PNG)
 
 Bu klasörleri birçok uygulamada görmüşsünüzdür. Kendi uygulamalarımız da ise ya bir başka kütüphaneden referans aldığımızda ya da yerelleştirme amacıyla resource dosyaları ekledimiğizde oluştuklarını görürüz.
 
