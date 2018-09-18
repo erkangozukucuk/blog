@@ -19,17 +19,17 @@ Resource Manager ile herhangi bir kültüre özel değişkenler tutabilirsiniz. 
 
 "Kaynak.resx" adındaki dosyamı oluşturuyorum:
 
-![sa2.png](media/SatelliteAssemblies/sa2.png)
+![sa2.PNG](media/SatelliteAssemblies/sa2.PNG)
 
 Visual Studio bu dosya biçimi için bana bir düzenleme aracı sunuyor. Bunu kullanarak basit bir sözlük yapısıyla değişkenlerimi ekleyebiliyorum.
 
-![sa3.png](media/SatelliteAssemblies/sa3.png)
+![sa3.PNG](media/SatelliteAssemblies/sa3.PNG)
 
 Dosyamın adında herhangi bir kültür belirteci yoktu. İngilizce dili için bu dosyanın bir kopyasını oluşturup adını "Kaynak.en.resx" koyuyorum. Uzantı ile dosya adı arasındaki kısma ister 2 harfli ("en", "tr", "az") belirteç veya uzun belirteç ("tr-tr","en-us") gibi kullabilirsiniz.
 
 Bu işlemlerin ardından "Kaynak" isimli dosyam için otomatik olarak bir sınıf ve bunun uydu derlemeleri üretilecektir. Üretilen sınıf sayesinde kolayca bu kaynağı kullanabilirim:
 
-![sa4.png](media/SatelliteAssemblies/sa4.png)
+![sa4.PNG](media/SatelliteAssemblies/sa4.PNG)
 
 İngilizce için dosyamı "Kaynak.en.resx" olarak kaydetmiştim. Uygulam normalde çalıştığı bilgisayarın kültürüne göre dilini ayarlayacak ama ben test etmek istiyorum. Bunun için ya işletim sisteminden değişiklik yapacağım ya da kod tarafında değişiklik yapacağım. Kod tarafında program.cs dosyama aşağıdaki satırı ekliyorum ve programı çalıştırıyorum.
 
@@ -41,15 +41,15 @@ Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = Cu
 
 
 
-![sa5.png](media/SatelliteAssemblies/sa5.png)
+![sa5.PNG](media/SatelliteAssemblies/sa5.PNG)
 
 İşi biraz alt seviyeye indirelim. Bir resim dosyası ekleyeceğim ve bu dosyanın farklı kültürlerdeki sürümlerini ayırmak istiyorum. Bunun için resim dosyamı projeye dahil ediyorum ve bu dosyanın Azeri kültürünü de ekliyorum.
 
-![sa6.png](media/SatelliteAssemblies/sa6.png)
+![sa6.PNG](media/SatelliteAssemblies/sa6.PNG)
 
 Her iki dosya için de "Embeded Resource" özelliğini seçiyorum.
 
-![sa7.png](media/SatelliteAssemblies/sa7.png)
+![sa7.PNG](media/SatelliteAssemblies/sa7.PNG)
 
 Form içerisine bir PictureBox ekledim ve adına FlagPicture dedim. Şimdi gömülü resourceları okuma zamanı geldi. Normalde uydu derleme olmadığında "GetManifestResourceStream" metodu gömülü kaynakları okumak için yeterli olacaktı. Fakat mevcut durumda uyduları dolaşıp uygun olanında kaynakları aramam gerekecek. Bu işlem için kodum şöyle:
 
