@@ -6,16 +6,16 @@ Tags: C#
 ---
 
 
-Muhtemelen bildiğiniz ama belki de adını ilk defa duyduğunuz bir kavramdan bahsedeceğim. Aşağıdaki ekran görüntüsünü inceleyin.
+Muhtemelen bildiğiniz ama belki de adını ilk defa duyduğunuz bir kavramdan bahsedeceğim. Aşağıdaki tanıdık ekran görüntüsünü inceleyin.
 
 
 ![sa1.PNG](media/SatelliteAssemblies/sa1.PNG)
 
-Bu klasörleri birçok uygulamada görmüşsünüzdür. Kendi uygulamalarımız da ise ya bir başka kütüphaneden referans aldığımızda ya da yerelleştirme amacıyla resource dosyaları ekledimiğizde oluştuklarını görürüz.
+Bu klasörleri birçok uygulamada görmüşsünüzdür. Kendi uygulamalarımızda ise ya bir başka kütüphaneden referans aldığımızda ya da yerelleştirme amacıyla resource dosyaları ekledimiğizde oluştuklarını görürüz.
 
-Bu assembly'lerin amacı kültüre göre değişen metin,resim,video gibi içeriklerin tekrar derleme gerekmeksizin dağıtılmasını sağlamaktır. Uygulamanıza yeni bir dil desteği sağlamak istediğinizde çıkacağınız güncellemede bu klasörü eklemeniz yeterli olacaktır. Pratik kullanımda ise işiniz olmayan Zimbabve kültürüne ait klasörü gönül rahatlığı ile silebilirsiniz
+Bu assembly'lerin (derleme/bileşen) amacı kültüre göre değişen metin,resim,video gibi içeriklerin tekrar derleme gerekmeksizin dağıtılmasını sağlamaktır. Uygulamanıza yeni bir dil desteği sağlamak istediğinizde yapacağınız güncellemede bu klasörü eklemeniz yeterli olacaktır. Pratik kullanımda ise işiniz olmayan Zimbabve kültürüne ait klasörü gönül rahatlığı ile silebilirsiniz
 
-Resource Manager ile herhangi bir kültüre özel değişkenler tutabilirsiniz. Bunun için yapmanız gereken projeye bir Resource dosyası eklemek ve kültüre göre özelleştirmek için kültür kısaltmasını dosya adına eklemek olacaktır.
+_Resource Manager_ ile herhangi bir kültüre özel değişkenler tutabilirsiniz. Bunun için yapmanız gereken projeye bir Resource dosyası eklemek ve kültüre göre özelleştirmek için kültür kodunu (_örneğin:_ Türkiye Türkçesi için "TR-tr" ) dosya adına eklemek olacaktır.
 
 "Kaynak.resx" adındaki dosyamı oluşturuyorum:
 
