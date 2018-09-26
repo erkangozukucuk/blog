@@ -7,12 +7,12 @@ Tags: C#
 
 Özyinelemeli (Recursive) algoritmalar, yazılıma ilk merhaba denilen günlerde anlaşılması biraz zor olan bir kavramdır. Programlamaya ısındıkça durum tersine döner ve karmaşık problemler için özyinelemeli bir yöntem varsa kod hızlıca bu şekilde yazılır geçilir. Kavram, bir metodun çalışma süresi içerisinde kendisini çağırması durumu olarak ifade edilir. Tekrar çağırılma sayısı ve hangi satırda çağrıldığına göre doğrusal, kuyruk, ikili, vb. kategorilere ayrılmaktadır.  
 
-<decode>
+[decode]
    <iframe src="https://www.w3schools.com">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-</decode>
+[/decode]
 
 Özyinelemeli algoritmalar çoğu zaman yazılımcıyı kolayca çözüme götüren ve okunabilirliği yüksek kodlardır. Fakat geliştirme yaptığımız dilin bu kodlara ne kadar uyumlu olduğu önemlidir. Bir çok derleyicide bazı özyineleme türleri optimize edilir. Özellikle Haskell gibi fonksiyonel programlama dillerinde ise zaten prosödürel dillerden alıştığımız döngü kavramı olmadığından, özyineleme şart olmaktadır. Bu yazı C# özelinde ilerleyecektir ve C# dilinde genellikle özyineleme kullanımı "tehlikelidir". Bunun sebeplerine değineceğim .Şimdi aşağıdaki kodu inceleyin:
 
