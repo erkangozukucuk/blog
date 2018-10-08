@@ -245,6 +245,7 @@ public static ref int GetMax(int[] array)
 		}
 	}
 	return ref array[maxIndex];
+	
 }
 ```
 
