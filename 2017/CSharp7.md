@@ -2,7 +2,7 @@
 Title: C# 7.0 ve 7.1 yenilikleri
 PublishDate: 1/10/2017
 IsActive: True
-IsListed: False
+IsListed: True
 Tags: C#, Xamarin, Etkinlik
 ---
 
@@ -50,7 +50,7 @@ Basit bir şekilde parantez içinde değerlerimizi verebiliyoruz. Ve dilersek he
 ```csharp
 var city = (Name: "Ankara", No: "06");
 ```
-Artık her iki şekilde de property değerlerini okumak mümkün ve değerlerin değiştirilmesi de mümkün:
+Artık her iki şekilde de property değerlerin okunması ve değiştirilmesi mümkün:
 
 ```csharp
 var city = (Name: "Ankara", No: "06");
