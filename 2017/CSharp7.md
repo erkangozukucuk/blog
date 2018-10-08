@@ -50,7 +50,7 @@ Basit bir şekilde parantez içinde değerlerimizi verebiliyoruz. Ve dilersek he
 ```csharp
 var city = (Name: "Ankara", No: "06");
 ```
-Artık her iki şekilde de property değerlerine erişmek mümkün ve değerlerinin değiştirilmesi de mümkün:
+Artık her iki şekilde de property değerlerini okumak mümkün ve değerlerin değiştirilmesi de mümkün:
 
 ```csharp
 var city = (Name: "Ankara", No: "06");
