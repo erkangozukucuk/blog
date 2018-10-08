@@ -2,6 +2,7 @@
 Title: C# 7.0 ve 7.1 yenilikleri
 PublishDate: 1/10/2017
 IsActive: True
+IsListed: False
 Tags: C#, Xamarin, Etkinlik
 ---
 
