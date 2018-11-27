@@ -2,6 +2,7 @@
 Title: Thread'lere kısa bakış
 PublishDate: 27/11/2018
 IsActive: True
+IsListed: True
 Tags: C#
 ---
 
