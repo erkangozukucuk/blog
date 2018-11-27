@@ -1,5 +1,5 @@
 ---
-Title: Thread'lere kısa bakış
+Title: Thread'lere Kısa Bakış
 PublishDate: 27/11/2018
 IsActive: True
 IsListed: True
