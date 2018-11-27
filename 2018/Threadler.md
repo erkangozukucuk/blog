@@ -1,18 +1,17 @@
 ---
 Title: Threadler
-PublishDate: 15/10/2018
-IsActive: False
+PublishDate: 27/11/2018
+IsActive: True
 Tags: C#
 ---
 
-Threadler ya da Türkçe tabir ile "iş parçacıkları" bir uygulamanın (process) iş yapan birimleridir. Bir uygulamada en az bir adet thread olması gerekir. Bu mecburi thread genellikle "main thread" olarak isimlendirilir ve bu thread sonlandığında normal şartlarda uygulamanın sonlaması beklenir (diğer şartları foreground ve background threadlerin anlatımında bulabilirsiniz). Threadler işletim sistemi tarafından önceliklerine göre belirli bir süre çalıştırılıp, dondurulurlar. Bu döngüye "spin" adı veriliyor ve her bir thread için ayrılan süre ise "time slice" olarak isimlendiriliyor. Bu işlem çok hızlı gerçekleştiği için biz bir çok uygulamanın aslında aynı anda iş yaptığını düşünürüz. Fakat aynı anda yapılan iş sayısı elimizdeki işlemci çekirdekleri sayısı kadardır.
+Threadler ya da Türkçe tabir ile "iş parçacıkları" bir uygulamanın (process) iş yapan birimleridir. Bir uygulamada en az bir adet thread olması gerekir. Bu mecburi thread genellikle "main thread" olarak isimlendirilir ve bu thread sonlandığında normal şartlarda uygulamanın sonlaması beklenir (tam burada foreground ve background thread kavramlarını not alın, bu yazıdan sonra araştrın). Threadler işletim sistemi tarafından önceliklerine göre belirli bir süre çalıştırılıp, dondurulurlar. Her bir thread için ayrılan süre ise "time slice" olarak isimlendiriliyor. Bu işlem çok hızlı gerçekleştiği için biz birçok uygulamanın aslında aynı anda iş yaptığını düşünürüz. Fakat aynı anda yapılan iş sayısı elimizdeki işlemci çekirdekleri sayısı kadardır.
 
-Detaylara inmeden yazının Windows işletim sistemi için ve .net ortamı için hazırlandığını hatırlatayım, diğer işletim sistemlerinde ve ortamlarda süreçler daha farklı olablir. Hemen yazıya devam edelim. Eğer görev yöneticisini açıp, mevcut thread sayısına bakarsanız binlerce threadin koştuğunu göreceksiniz. Bunların eş zamanlı gibi çalışmasını sağlayan öncelik tabanlı round-robin algoritmasıdır.Her thread için sırayla belirli bir süre ayrılır bu süre dolarsa veya  threadin yapacak işi yoksa sıradaki thread çalıştırılır. Bir diğer kısıtta eğer bir thread çalışırken daha yüksek öncelikli bir process veya thread iş için hazırsa mevcut çalışan thread zaman baklemeden dondurulur ve öncelikli thread işi alır. Bu dondurma işlemlerinde yapılan işleme de "context-switch" adı verilmekte.
+Detaylara inmeden yazının Windows işletim sistemi için ve .net ortamı için hazırlandığını hatırlatayım, diğer işletim sistemlerinde ve ortamlarda süreçler daha farklı olabilir. Hemen yazıya devam edelim. Eğer görev yöneticisini açıp, mevcut thread sayısına bakarsanız binlerce threadin koştuğunu göreceksiniz. Bunların eş zamanlı gibi çalışmasını sağlayan "öncelik tabanlı round-robin" algoritmasıdır. Her thread için sırayla belirli bir süre ayrılır bu süre dolarsa veya threadin yapacak işi yoksa sıradaki thread çalıştırılır. Bir diğer kısıtta eğer bir thread çalışırken daha yüksek öncelikli bir process veya thread iş için hazırsa mevcut çalışan thread zaman baklemeden dondurulur ve öncelikli thread işi alır. Bu dondurma işlemlerinde yapılan işleme de "context-switch" adı verilmekte.
 
-Biz .net tarafına doğru hızlıca dönelim. Main thread aynı zamanda işletim sistemi ile haberleşmeyi sağladığı için eğer bu arkadaş meşgul edilirse, işletim sisteminin emirlerini işlemekte sıkıntı çekebilir. Bunu denemek için bir button arkasında sonsuz döngü oluşturabilirsiniz. Düğmeye tıklanıldığında uygulama üzerindeki diğer nesneleri kullanamadığınızı ve uygulamayı hareket bile ettiremediğinizi göreceksiniz. Bir süre sonra işletim sistemi uygulamaya komutları işlemediği için uygulamanın "yanıt vermediği" yönünde sizi bilgilendirecektir.
+Biz .net tarafına doğru hızlıca dönelim. Main thread aynı zamanda işletim sistemi ile haberleşmeyi sağladığı için eğer bu arkadaş meşgul edilirse, işletim sisteminin emirlerini işlemekte sıkıntı çekebilir. Bunu denemek için bir button arkasında sonsuz döngü oluşturabilirsiniz. Düğmeye tıklanıldığında uygulama üzerindeki diğer nesneleri kullanamadığınızı ve uygulamayı hareket bile ettiremediğinizi göreceksiniz. Bir süre sonra işletim sistemi uygulama komutları işlemediği için uygulamanın "yanıt vermediği" yönünde sizi bilgilendirecektir.
 
-
-C#  tarafında yeni bir `thread` oluşturmak basittir. 
+C# tarafında yeni bir `thread` oluşturmak basittir. Yeni bir thread oluşturduğumuzda yapıcı metoda parametresiz almayan bir `ThreadStart` ve tek bir object parametresi olan `ParameterizedThreadStart` delegelerinden bir argüman vermeniz beklenir. Opsiyonel olarak da stack boyutu belirtebilirsiniz.
 
 ```csharp
 static void Main()
@@ -29,7 +28,7 @@ static void YaziYaz()
 }
 ```
 
-Yeni bir thread oluştur diyoruz ve çalıştırmasını istediğimiz giriş metodunu veriyoruz. Yine bu thread e parametre vermek istersek  metodumuz `object` türünden bir parametre almalı.
+Yeni bir thread oluştur diyoruz ve çalıştırmasını istediğimiz giriş metodunu veriyoruz. Yine bu thread e parametre vermek istersek metodumuz `object` türünden bir parametre almalı.
 
 ```csharp
 static void Main()
@@ -45,8 +44,7 @@ static void YaziYaz(object yazi)
 	Console.WriteLine(yazi);
 }
 ```
-
-
+ 
 Tek çekirdek varken birden fazla thread kullanımında genellikle amacımız uygulamamızın akıcı olmasıdır ve açıkçası kodlama kısmında pek problem yaşamayız. Fakat günümüzde tek çekirdekli işlemci arasanız bulamayabilirsiniz. Birden fazla çekirdek olan durumda uygulamamız neden tek bir çekirdeğe hapsolsun ki? Word örneğinde yazım denetimi ben yazarken dahi çalışacaktır. Asıl önemli olan veri işlemede bize kazandırdığı performans artışıdır. Örneğin, bir sayı dizindeki tüm sayıların üç katını alacak bir döngümüz olsun.
 
 ```csharp
@@ -58,7 +56,7 @@ for (int i = 0; i < dizi.Length; i++)
  
 ```
 
-Bu kodda yer alan çarpma işlemi için 1 spin gerektiğini düşünelim, bu durumda işlem 12 işlemci döngüsünde gerçekleşecektir. İki çekirdekli bir işlemcimiz olduğu durumda eğer çarpma işlemlerini üleştirirsek bu durumda 12 / 2 = 6 döngüde aynı işlemi gerçekleştirmiş olabiliriz. Günümüzde 4 çekirdek kullanımı neredeyse standart olduğuna göre, neden CPUnun kalan 3/4nü kullanmayalım? Bunu gerçekleştirmek adına dizinin farklı bölgelerinden başlayan threadler ile döngüler kurabiliriz. Haydi yapalım...
+Bu kodda yer alan çarpma işlemi için 1 tur gerektiğini düşünelim, bu durumda işlem 12 işlemci döngüsünde gerçekleşecektir. İki çekirdekli bir işlemcimiz olduğu durumda eğer çarpma işlemlerini üleştirirsek bu durumda 12 / 2 = 6 döngüde aynı işlemi gerçekleştirmiş olabiliriz. Günümüzde 4 çekirdek kullanımı neredeyse standart olduğuna göre, neden CPUnun kalan 3/4nü kullanmayalım? Bunu gerçekleştirmek adına dizinin farklı bölgelerinden başlayan threadler ile döngüler kurabiliriz. Haydi yapalım...
 
 ```csharp
 var dizi = new[] {0,1,2,3,4,5,6,7,8,9,10,11};
@@ -88,9 +86,9 @@ t2.Join();
 t3.Join();
 ```
 
-Epey uzun bir kod oldu değil mi? Merak etmeyin, bu kodlar oldukça kısalacaklar. Ama önce ne yaptığımızdan bahsedelim. `islem` adında bir metodumuz var bu metot `object` türünden bir parametre alıyor. Bunu ister benim gibi inline metot olarak tanımlarsınız ister, normal metot olarak hiç fark etmez. Sonra 4 adet thread tanımlıyorum ve her birinin başlangıç metodu `islem` adını verdiğim metot. Burda ufak bir soruç Peki bizim oluşturduğumuz normal programlardaki main thread'in başlangıç metodu ne? Eğer siz bunu özellikle değiştirmezseniz, Program.cs dosyası içinde göreceğiniz Main() metodu başlangıç metodumuzdur diyerek kısa bilgiden kodun açıklamasına devam edeyim. Peşinden 4 adet `Start` metodu başlatıyoruz. Her birine de thread'e aktarmak için bir parametre bilgisi geçiyoruz. Bu dizinin kaçıncı elemanından itibaren iş yapacağı oldu bu senaryoda, siz her türden nesneyi buraya verebilirsiniz. Arkasından da 4 adet `join` metodu geldiğini göreceksiniz. Bu metot çalışan bir thread bitene kadar beklenmesini sağlar. Hepsini alt alta yazdığımız için tümünün bitmesini bekliyor oluyoruz. Eğer beklemeden ekrana bu dizinin içeriğini basarsak tüm sayılar için işlem yapılmadığını görürüz.
+Epey uzun bir kod oldu değil mi? Merak etmeyin, bu kodlar güncel C# sürümlerinde oldukça kısa yazılabilmektedir. Ama önce ne yaptığımızdan bahsedelim. `islem` adında bir metodumuz var bu metot `object` türünden bir parametre alıyor. Bunu ister benim gibi inline metot olarak tanımlarsınız ister, normal metot olarak hiç fark etmez. Sonra 4 adet thread tanımlıyorum ve her birinin başlangıç metodu `islem` adını verdiğim metot. Burda ufak bir soru sormak isterim. Peki, bizim oluşturduğumuz normal programlardaki main thread'in başlangıç metodu ne? Cevap aslında soruda gizli. Eğer siz bunu özellikle değiştirmezseniz, `Program.cs` dosyası içinde göreceğiniz `Main()` metodu başlangıç metodumuzdur diyerek kodun açıklamasına devam edeyim. Peşinden 4 adet `Start` metodu başlatıyoruz. Her birine de thread'e aktarmak için bir parametre bilgisi geçiyoruz. Bu dizinin kaçıncı elemanından itibaren iş yapacağı oldu bu senaryoda, siz her türden nesneyi buraya verebilirsiniz. Arkasından da 4 adet `join` metodu geldiğini göreceksiniz. Bu metot çalışan bir thread bitene kadar beklenmesini sağlar. Hepsini alt alta yazdığımız için tümünün bitmesini bekliyor oluyoruz. Eğer beklemeden ekrana bu dizinin içeriğini basarsak tüm sayılar için işlem yapılmadığını görürüz.
 
-Yukarıda yazdığımız kodu TPL sayesinde aşağıdaki gibi çok daha kısa yazılabileceğini ileri ki yazılarda anlatıyor olacağım.
+Yukarıda yazdığımız kodu TPL (Task Parallel Library) sayesinde aşağıdaki gibi çok daha kısa yazılabileceğini ileriki yazılarda anlatıyor olacağım.
 
 ```csharp
 var dizi = new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
@@ -100,6 +98,6 @@ Parallel.For(0, dizi.Length, i =>
 });
 ```
 
-Peki, bu işlemi 4 farklı threade böldüm. Kodum 4 kat hızlandı mı? Cevap vereyim, yukarıdaki kod için yaptığımız işlem yavaşladı. Sebebine gelince, bu kod zaten tek thread de kendisine ayrılan süre içerisinde bitebilecekken biz bunu 4 parçaya böldük. Üstelik aslında bir sürü ek kodlama yaptık. Yani her işi bölmenin anlamı yok. Ama şu 12 kere dönen işlemde her bir döngüde gerçekten uzun süren bir işlem yaptığımızda çok ciddi hızlanmalar elde edebiliriz. 
+Peki, bu işlemi 4 farklı threade böldüm. Kodum 4 kat hızlandı mı? Cevap vereyim, yukarıdaki kod için yaptığımız işlem yavaşladı. Sebebine gelince, bu kod zaten tek thread de kendisine ayrılan süre içerisinde bitebilecekken biz bunu 4 parçaya böldük. Aslında yapılan iş sayısını arttırmış olduk. Ama, dizinin her bir elemanı için işletilen kod daha zorlayıcı bir kod olaydı o zaman çok ciddi performans artışları sağlayabilirdik.
 
-Farklı işlemcilere hükmetmek, aynı anda bir çok iş yapmak güzel şeyler ama threadlerin kötü yüzleri de var. Bunlara ileride değinmek üzere...
+Aynı anda birçok iş yapmak güzel şeyler ama threadlerin kötü yüzleri de var. Bunlara ileride değinmek üzere...
