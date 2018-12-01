@@ -89,7 +89,7 @@ t3.Join();
 
 Epey uzun bir kod oldu değil mi? Merak etmeyin, bu kodlar güncel C# sürümlerinde oldukça kısa yazılabilmektedir. Ama önce ne yaptığımızdan bahsedelim. `islem` adında bir metodumuz var bu metot `object` türünden bir parametre alıyor. Bunu ister benim gibi inline metot olarak tanımlarsınız ister, normal metot olarak hiç fark etmez. Sonra 4 adet thread tanımlıyorum ve her birinin başlangıç metodu `islem` adını verdiğim metot. Burda ufak bir soru sormak isterim. Peki, bizim oluşturduğumuz normal programlardaki main thread'in başlangıç metodu ne? Cevap aslında soruda gizli. Eğer siz bunu özellikle değiştirmezseniz, `Program.cs` dosyası içinde göreceğiniz `Main()` metodu başlangıç metodumuzdur diyerek kodun açıklamasına devam edeyim. Peşinden 4 adet `Start` metodu başlatıyoruz. Her birine de thread'e aktarmak için bir parametre bilgisi geçiyoruz. Bu dizinin kaçıncı elemanından itibaren iş yapacağı oldu bu senaryoda, siz her türden nesneyi buraya verebilirsiniz. Arkasından da 4 adet `join` metodu geldiğini göreceksiniz. Bu metot çalışan bir thread bitene kadar beklenmesini sağlar. Hepsini alt alta yazdığımız için tümünün bitmesini bekliyor oluyoruz. Eğer beklemeden ekrana bu dizinin içeriğini basarsak tüm sayılar için işlem yapılmadığını görürüz.
 
-Yukarıda yazdığımız kodu TPL (Task Parallel Library) sayesinde aşağıdaki gibi çok daha kısa yazılabileceğini ileriki yazılarda anlatıyor olacağım.
+Yukarıda yazdığımız kodu TPL (Task Parallel Library) sayesinde aşağıdaki gibi çok daha kısa yazılabileceğini ileriki yazılarda anlatıyor olacağım. Aşağıdaki kodun birebir karşılık olmadığını ve thread sayısına kendisinin karar verdiğini not edeyim.
 
 ```csharp
 var dizi = new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
