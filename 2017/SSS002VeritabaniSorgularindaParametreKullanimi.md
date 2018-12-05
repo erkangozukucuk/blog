@@ -59,9 +59,9 @@ Sorgum bu hale geldiğinde aslında bir kaç iş birden yaptım:
 
 Sorguda kullanılacak nesnenin tipini açıkça belirttim. Bu sayede örtülü tür dönüşümü yaşanmayacak.
 
-Aynı değeri birden fazla kullandığımda tekrar tekrar yazmak zorunda kalmayacağım.
+Aynı değeri birden fazla kullandığımda tekrar tekrar yazmak zorunda kalmayacağım. Her ad filtresi için "Cihan" yazmak yerine daha yapısal olan @ad yazmam daha iyi olacaktır.
 
-Ana sorgu parametreli hale gelmiş oldu bu sayede değer "Cihan" da olsa "Daron" da olsa aynı planı kullanacak. Aksi durumda veritabanınıza 10000 farklı isimle sorgu atıldığında her biri farklı planla yorumlanması gerekecek.
+Ana sorgu parametreli hale gelmiş oldu bu sayede değer "Cihan" da olsa "Daron" da olsa aynı planı kullanacak. Aksi durumda veritabanınıza 10000 farklı isimle sorgu atıldığında her biri farklı planla yorumlanması gerekecek (bu durum farklı veritabanları için  optimize edilebilir elebette biz genel düşünelim).
 
 Tekrar hatırlatıyorum bu kullanımı gerçek senaryoda sürekli değişkenlik gösterecek durumlar için yapıyoruz. Örneğin veritabanında soft delete yani `SilindiMi` gibi bir alan ile bir kaydı silinmiş gibi gösteriyor olun. Bu durumda bu sorguda hep 0 değerini kullanacağınız için bu kısmı parametrik yapmanıza gerek olmayackatır:
 Örnek:
