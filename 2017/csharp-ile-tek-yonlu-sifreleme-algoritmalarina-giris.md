@@ -7,7 +7,6 @@ Tags: C#
 
 Veriyi şifreleme ile ilk yazımda konuya tek yönlü şifreleme mantığı ile başlamak istedim. Tek yönlü şifreleme adından da anlaşıldığı üzere şifreleme yapıldıktan sonra orijinal bilgiye ulaşılması mümkün olmayan(_ters işlem yazıldığında şifreli metnin açtığınızda sonsuz karşılığı olduğu için_) olan şifreleme yöntemlerinin genel adıdır.
 
-> "Ama brute force gibi yöntemler var" diyebilirsiniz. 
 
 Tek yönlü şifrelemelerin oldukça yaygın kullanımı vardır. Orijinal bilgiye tekrar ulaşılamadığı için gizli bilgi iletiminde kullanılamayacakları açıktır. Peki nerelerde kullanıyoruz? Genel olarak "doğrulama" işlemlerinde kullanıyoruz diyebiliriz. 
 
