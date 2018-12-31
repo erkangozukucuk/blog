@@ -104,8 +104,8 @@ Oransal değişiklik konusunu ile başlayalım. Basit bir şekilde elimizdeki di
 
 Diğer kullanım durumlarına değinmeden formülü vereyim. Bu iş için kullanılan iki formül var.
 
-$$\overline{X}_{geom} = (\prod_{i=1}^{N}{X_i})^{\frac{1}{N}}$$
 
+$$\overline{X}_{geom} = (\prod_{i=1}^{N}{X_i})^{\frac{1}{N}}$$
 
 
 ve
@@ -125,11 +125,11 @@ public static double GeometrikOrtalama2(IList<double> dizi)
 	return Math.Pow(2, dizi.Sum(x => Math.Log(x,2)) / dizi.Count); //2 yerine herhangi bir sayı yazılabilir
 }
 ```
-> Linq de yer alan `Aggregate` metodu iki argüman verir.Başlangıçta ilk iki eleman olmak üzere birisi mevcut elemanı diğeri bir önceki hesaplamadan dönen değeri verir. Yani  `2,4,6` dizisi için `x*y` durumunda sırasıyla {2,4}, {8,16} şeklinde 2 tur dönecektir. Ve sonuç  8 * 16 = 128 olarak bulunacaktır. Bu metod diğer programlama dillerinde _reduce_ olarak geçmektedir.
+> Linq de yer alan `Aggregate` metodu iki argümanı vardır.Döngünün ilk turunda dizinin ilk iki elemanı olmak üzere, diğer tüm turlarda bu argümanlardan birisi mevcut elemanı diğeri bir önceki hesaplamadan dönen değeri verir. Yani  `2,4,6` dizisi için `x*y` durumunda sırasıyla {2,4}, {8,16} şeklinde 2 tur dönecektir. Ve sonuç  8 * 16 = 128 olarak bulunacaktır. Bu metod diğer programlama dillerinde _reduce_ olarak geçmektedir.
 
 Sapan (outlier) veri olduğunda geometrik ortalama ile bu verilerin etkisi azaltılabilir. Fakat bu amaçla genellikle birazdan değineceğim harmonik ortalama kullanılmaktadır. Yine de harmonik ortalamanın hesaplanamadığı durumlarda bu amaçla kullanılabilir.
 
-İşin gerçekten geometri ile ilgili olan kullanımına gelirsek, 3 e 27 lik bir dikdörtgen düşünün. Bu şeklin alanı 27dir. Peki alanı 27 olan karenin bir kenar boyutu kaçtır? Geometrik ortalama yaptığımızda sonuç 9 çıkacaktır. Bunu her boyut için uygulamak mümkündür.
+İşin gerçekten geometri ile ilgili olan kullanımına gelirsek, 3 e 9 luk bir dikdörtgen düşünün. Bu şeklin alanı 27dir. Peki alanı 27 olan karenin bir kenar boyutu kaçtır? Geometrik ortalama yaptığımızda sonuç ~5.19 çıkacaktır. Bunu her boyut için uygulamak mümkündür.
 
 Normalizasyon tüm özelliklerin aynı birimden ifade edilmesidir. Fakat pratik kullanımda, karşılaştırmalarda geometrik ortalama kullanılabilir. Örneğin sınırlı miktarda paranız ve bir oyun alacaksınız. İki farklı oyun yorum sitesi buldunuz, sitelerden birisi 5 üzerinden diğeri 100 üzerinden puanlama yapıyor olsun. A oyunu için (7 - 85); B oyunu için (6 - 90) gibi puanlama yapılmış olsun. Eğer aritmetik ortalamalarını karşılaştırmak isterseniz sonuç A oyunu için 46, B için 48 çıkacaktır. Fakat geometrik ortalama da sonuçlar A için 24, B için 23 olduğundan tercih edilmesi gereken A olacaktır.  Eğer normalizasyon yapsaydık sonuç 0.8 A, 0.75 B çıkacaktı ve sonuç değişmeyecekti. 
 
