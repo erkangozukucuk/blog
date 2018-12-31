@@ -1,6 +1,6 @@
 ---
 Title: Connect 2018 Türkiye
-PublishDate: 31/12/2018
+PublishDate: 30/12/2018
 IsActive: True
 IsListed: True
 Tags: C#
