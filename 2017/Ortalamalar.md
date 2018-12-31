@@ -104,9 +104,7 @@ Oransal değişiklik konusunu ile başlayalım. Basit bir şekilde elimizdeki di
 
 Diğer kullanım durumlarına değinmeden formülü vereyim. Bu iş için kullanılan iki formül var.
 
-
-$$ \overline{X}_{geom} = (\prod_{i=1}^{N}{X_i})^{\frac{1}{N}}$$
-
+$$ \overline{X}{geom} = (\prod_{i=1}^{N}{X_i})^{\frac{1}{N}}$$
 
 ve
 
