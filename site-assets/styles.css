@@ -6,37 +6,27 @@
 
 @media all and (max-width: 1000px) {
     body { font-size: 18px; }
-   .content {padding: 80px;}
 }
 
 
 @media all and (max-width: 760px) {
     body { font-size: 17px; }
-.content {padding: 75px;}
 }
 
 @media all and (max-width: 720px) {
     body { font-size: 17px; }
-.content {padding: 60px;}
-
 }
 
 @media all and (max-width: 680px) {
     body { font-size: 17px; }
- .content {padding: 55px;}
-
 }
 
 @media all and (max-width: 640px) {
     body { font-size: 16px; }
-.content {padding: 40px;}
-
 }
 
 @media all and (max-width: 600px) {
     body { font-size: 15px; }
-   .content {padding: 8px;}
-
 }*/
 
 
@@ -380,12 +370,13 @@ footer {
 }
 @media all and (max-width: 990px) {
     .content {
-        margin-left: 10vw;
-        margin-right: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+	padding : 80px;
     }
     .listing {
-        margin-left: 10vw;
-        margin-right: 10vw;
+        margin-left: auto;
+        margin-right: auto;
     }
     footer {
         margin-left: 10vw;
@@ -397,9 +388,9 @@ footer {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) { 
     .content {
-        margin-left: 1vw;
-        margin-right: 1vw;
-        padding: 2vh 4vw 2vh 4vw;
+	margin-left: auto;
+        margin-right: auto;
+	padding : 30px;
     }
 
     .listing {
