@@ -2,6 +2,7 @@
 Title: Veriyi Anlamak - Ortalamalar
 PublishDate: 29/08/2017
 IsActive: True
+IsListed: True
 Tags: C#, Veri Madenciliği
 ---
 
