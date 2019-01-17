@@ -6,30 +6,30 @@
 
 @media all and (max-width: 1000px) {
     body { font-size: 18px; }
-   .content {padding: 30px;}
+   .content {padding: 80px;}
 }
 
 
 @media all and (max-width: 760px) {
     body { font-size: 17px; }
-.content {padding: 25px;}
+.content {padding: 75px;}
 }
 
 @media all and (max-width: 720px) {
     body { font-size: 17px; }
-.content {padding: 20px;}
+.content {padding: 60px;}
 
 }
 
 @media all and (max-width: 680px) {
     body { font-size: 17px; }
- .content {padding: 15px;}
+ .content {padding: 55px;}
 
 }
 
 @media all and (max-width: 640px) {
     body { font-size: 16px; }
-.content {padding: 10px;}
+.content {padding: 40px;}
 
 }
 
