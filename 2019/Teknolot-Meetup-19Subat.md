@@ -6,7 +6,7 @@ IsListed: True
 Tags: C#
 ---
 
-**Teknolot** olarak gerçekleştirdiğimiz son etkinliğimiz epey geç duyurmamıza rağmen güzel bir katılım aldı. Etkinlikde Daron baştan sona bir Serverless SPA örneği gerçekleştirdi. Ben de ML.net anlattım. Katılan, geç saate kadar bizi sıkılmadan dinleyen herkese çok teşekkürler.
+**Teknolot** olarak gerçekleştirdiğimiz son etkinliğimiz epey geç duyurmamıza rağmen güzel bir katılım aldı. Etkinlikde Daron baştan sona bir Serverless SPA örneği gerçekleştirdi. Ben de ML.net ile bir sınıflandırma örneği anlattım. Katılan, geç saate kadar bizi sıkılmadan dinleyen herkese çok teşekkürler.
 
 Sunumdaki örnek kodlar:
 
