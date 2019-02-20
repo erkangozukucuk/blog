@@ -13,6 +13,6 @@ Sunumdaki örnek kodlar:
 [https://github.com/Teknolot/meetup-demos/tree/master/ml-net-wine-classification](https://github.com/Teknolot/meetup-demos/tree/master/ml-net-wine-classification)
 
 
-![teknolot](media/photo_2019-02-20_14-12-24.jpg)
+![teknolot](media/IMG_6783.jpg)
 
 <script async class="speakerdeck-embed" data-id="fa8a2eae1d3c40988d7037c5ee15c590" data-ratio="1.6" src="//speakerdeck.com/assets/embed.js"></script>
